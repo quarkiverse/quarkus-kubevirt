@@ -1,0 +1,53 @@
+package io.quarkus.kubevirt.v1.kubevirtspec;
+
+@com.fasterxml.jackson.annotation.JsonInclude(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL)
+@com.fasterxml.jackson.annotation.JsonPropertyOrder({ "nodePlacement", "replicas" })
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None.class)
+@lombok.ToString()
+@lombok.EqualsAndHashCode()
+@io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
+        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+})
+public class Workloads implements io.fabric8.kubernetes.api.model.KubernetesResource {
+
+    /**
+     * nodePlacement describes scheduling configuration for specific KubeVirt components
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nodePlacement")
+    @com.fasterxml.jackson.annotation.JsonPropertyDescription("nodePlacement describes scheduling configuration for specific KubeVirt components")
+    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+    private io.quarkus.kubevirt.v1.kubevirtspec.workloads.NodePlacement nodePlacement;
+
+    public io.quarkus.kubevirt.v1.kubevirtspec.workloads.NodePlacement getNodePlacement() {
+        return nodePlacement;
+    }
+
+    public void setNodePlacement(io.quarkus.kubevirt.v1.kubevirtspec.workloads.NodePlacement nodePlacement) {
+        this.nodePlacement = nodePlacement;
+    }
+
+    /**
+     * replicas indicates how many replicas should be created for each KubeVirt infrastructure component (like virt-api or
+     * virt-controller). Defaults to 2. WARNING: this is an advanced feature that prevents auto-scaling for core kubevirt
+     * components. Please use with caution!
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("replicas")
+    @com.fasterxml.jackson.annotation.JsonPropertyDescription("replicas indicates how many replicas should be created for each KubeVirt infrastructure component (like virt-api or virt-controller). Defaults to 2. WARNING: this is an advanced feature that prevents auto-scaling for core kubevirt components. Please use with caution!")
+    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+    private Long replicas;
+
+    public Long getReplicas() {
+        return replicas;
+    }
+
+    public void setReplicas(Long replicas) {
+        this.replicas = replicas;
+    }
+}

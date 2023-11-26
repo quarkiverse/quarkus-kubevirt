@@ -1,0 +1,5 @@
+name: quarkus-kubevirt-client
+title: Quarkus Kubevirt Client
+version: dev
+nav:
+  - modules/ROOT/nav.adoc
