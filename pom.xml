@@ -31,8 +31,8 @@
   </modules>
 
   <scm>
-    <connection>scm:git:git@github.com:quarkiverse.kubevirt.git</connection>
-    <developerConnection>scm:git:git@github.com:quarkiverse.kubevirt.git</developerConnection>
+    <connection>scm:git:git@github.com:quarkiverse/quarkus-kubevirt-client.git</connection>
+    <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-kubevirt-client.git</developerConnection>
     <url>https://github.com/quarkiverse.kubevirt</url>
   </scm>
   <properties>
