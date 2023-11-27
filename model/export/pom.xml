@@ -28,7 +28,7 @@
 
   <artifactId>quarkus-kubevirt-model-export</artifactId>
   <packaging>jar</packaging>
-  <name>Quarkus Kubevirt Client - Model - Export</name>
+  <name>Quarkus Kubevirt - Model - Export</name>
 
   <properties>
     <clone-kube>true</clone-kube>
@@ -115,7 +115,7 @@
               <source>src/main/crds</source>
               <target>src/main/java</target>
               <packageOverrides>
-                <io.kubevirt.export.v1alpha1>io.quarkus.kubevirt.export.v1alpha1</io.kubevirt.export.v1alpha1>
+                <io.kubevirt.export.v1alpha1>io.quarkiverse.kubevirt.export.v1alpha1</io.kubevirt.export.v1alpha1>
               </packageOverrides>
             </configuration>
           </plugin>

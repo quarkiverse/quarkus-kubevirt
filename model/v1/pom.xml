@@ -28,7 +28,7 @@
 
   <artifactId>quarkus-kubevirt-model-v1</artifactId>
   <packaging>jar</packaging>
-  <name>Quarkus Kubevirt Client - Model - v1</name>
+  <name>Quarkus Kubevirt - Model - v1</name>
 
   <properties>
     <clone-kube>true</clone-kube>
@@ -115,7 +115,7 @@
               <source>src/main/crds</source>
               <target>src/main/java</target>
               <packageOverrides>
-                <io.kubevirt.v1>io.quarkus.kubevirt.v1</io.kubevirt.v1>
+                <io.kubevirt.v1>io.quarkiverse.kubevirt.v1</io.kubevirt.v1>
               </packageOverrides>
             </configuration>
           </plugin>

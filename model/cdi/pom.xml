@@ -28,7 +28,7 @@
 
   <artifactId>quarkus-kubevirt-model-cdi</artifactId>
   <packaging>jar</packaging>
-  <name>Quarkus Kubevirt Client - Model - CDI</name>
+  <name>Quarkus Kubevirt - Model - CDI</name>
 
   <properties>
     <clone-kube>true</clone-kube>
@@ -115,22 +115,22 @@
               <source>src/main/crds</source>
               <target>src/main/java</target>
               <packageOverrides>
-                <io.kubevirt.v1>io.quarkus.kubevirt.v1</io.kubevirt.v1>
-                <io.kubevirt.v1alpha3>io.quarkus.kubevirt.v1alpha3</io.kubevirt.v1alpha3>
-                <io.kubevirt.cdi.v1beta1>io.quarkus.kubevirt.cdi.v1beta1</io.kubevirt.cdi.v1beta1>
-                <io.kubevirt.network.networkaddonsoperator.v1>io.quarkus.kubevirt.network.networkaddonsoperator.v1</io.kubevirt.network.networkaddonsoperator.v1>
-                <io.kubevirt.network.networkaddonsoperator.v1alpha1>io.quarkus.kubevirt.network.networkaddonsoperator.v1alpha1</io.kubevirt.network.networkaddonsoperator.v1alpha1>
-                <io.kubevirt.pool.v1alpha1>io.quarkus.kubevirt.pool.v1alpha1</io.kubevirt.pool.v1alpha1>
-                <io.kubevirt.migrations.v1alpha1>io.quarkus.kubevirt.migrations.v1alpha1</io.kubevirt.migrations.v1alpha1>
-                <io.kubevirt.instancetype.v1alpha1>io.quarkus.kubevirt.instancetype.v1alpha1</io.kubevirt.instancetype.v1alpha1>
-                <io.kubevirt.instancetype.v1alpha2>io.quarkus.kubevirt.instancetype.v1alpha2</io.kubevirt.instancetype.v1alpha2>
-                <io.kubevirt.clone.v1aplha1>io.quarkus.kubevirt.clone.v1aplha1</io.kubevirt.clone.v1aplha1>
-                <io.kubevirt.hco.v1beta1>io.quarkus.kubevirt.hco.v1beta1</io.kubevirt.hco.v1beta1>
-                <io.kubevirt.export.v1alpha1>io.quarkus.kubevirt.export.v1alpha1</io.kubevirt.export.v1alpha1>
-                <io.kubevirt.hostpathprovisioner.v1beta1>io.quarkus.kubevirt.hostpathprovisioner.v1beta1</io.kubevirt.hostpathprovisioner.v1beta1>
-                <io.kubevirt.snapshot.v1alpha1>io.quarkus.kubevirt.snapshot.v1alpha1</io.kubevirt.snapshot.v1alpha1>
-                <io.kubevirt.ssp.v1beta1>io.quarkus.kubevirt.ssp.v1beta1</io.kubevirt.ssp.v1beta1>
-                <io.kubevirt.tektontasks.v1alpha1>io.quarkus.kubevirt.tektontasks.v1alpha1</io.kubevirt.tektontasks.v1alpha1>
+                <io.kubevirt.v1>io.quarkiverse.kubevirt.v1</io.kubevirt.v1>
+                <io.kubevirt.v1alpha3>io.quarkiverse.kubevirt.v1alpha3</io.kubevirt.v1alpha3>
+                <io.kubevirt.cdi.v1beta1>io.quarkiverse.kubevirt.cdi.v1beta1</io.kubevirt.cdi.v1beta1>
+                <io.kubevirt.network.networkaddonsoperator.v1>io.quarkiverse.kubevirt.network.networkaddonsoperator.v1</io.kubevirt.network.networkaddonsoperator.v1>
+                <io.kubevirt.network.networkaddonsoperator.v1alpha1>io.quarkiverse.kubevirt.network.networkaddonsoperator.v1alpha1</io.kubevirt.network.networkaddonsoperator.v1alpha1>
+                <io.kubevirt.pool.v1alpha1>io.quarkiverse.kubevirt.pool.v1alpha1</io.kubevirt.pool.v1alpha1>
+                <io.kubevirt.migrations.v1alpha1>io.quarkiverse.kubevirt.migrations.v1alpha1</io.kubevirt.migrations.v1alpha1>
+                <io.kubevirt.instancetype.v1alpha1>io.quarkiverse.kubevirt.instancetype.v1alpha1</io.kubevirt.instancetype.v1alpha1>
+                <io.kubevirt.instancetype.v1alpha2>io.quarkiverse.kubevirt.instancetype.v1alpha2</io.kubevirt.instancetype.v1alpha2>
+                <io.kubevirt.clone.v1aplha1>io.quarkiverse.kubevirt.clone.v1aplha1</io.kubevirt.clone.v1aplha1>
+                <io.kubevirt.hco.v1beta1>io.quarkiverse.kubevirt.hco.v1beta1</io.kubevirt.hco.v1beta1>
+                <io.kubevirt.export.v1alpha1>io.quarkiverse.kubevirt.export.v1alpha1</io.kubevirt.export.v1alpha1>
+                <io.kubevirt.hostpathprovisioner.v1beta1>io.quarkiverse.kubevirt.hostpathprovisioner.v1beta1</io.kubevirt.hostpathprovisioner.v1beta1>
+                <io.kubevirt.snapshot.v1alpha1>io.quarkiverse.kubevirt.snapshot.v1alpha1</io.kubevirt.snapshot.v1alpha1>
+                <io.kubevirt.ssp.v1beta1>io.quarkiverse.kubevirt.ssp.v1beta1</io.kubevirt.ssp.v1beta1>
+                <io.kubevirt.tektontasks.v1alpha1>io.quarkiverse.kubevirt.tektontasks.v1alpha1</io.kubevirt.tektontasks.v1alpha1>
               </packageOverrides>
             </configuration>
           </plugin>

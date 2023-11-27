@@ -27,7 +27,7 @@
 
   <artifactId>quarkus-kubevirt-templates</artifactId>
   <packaging>jar</packaging>
-  <name>Quarkus Kubevirt Client - Templates</name>
+  <name>Quarkus Kubevirt - Templates</name>
 
   <build>
     <resources>

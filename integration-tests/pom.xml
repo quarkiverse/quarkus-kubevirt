@@ -8,7 +8,7 @@
     <version>999-SNAPSHOT</version>
   </parent>
   <artifactId>quarkus-kubevirt-client-integration-tests</artifactId>
-  <name>Quarkus Kubevirt Client - Integration Tests</name>
+  <name>Quarkus Kubevirt - Integration Tests</name>
   <properties>
     <skipITs>true</skipITs>
   </properties>

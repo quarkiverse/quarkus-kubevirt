@@ -7,12 +7,20 @@
     <artifactId>quarkus-kubevirt-client-parent</artifactId>
     <version>999-SNAPSHOT</version>
   </parent>
-  <artifactId>quarkus-kubevirt-client</artifactId>
-  <name>Quarkus Kubevirt Client - Runtime</name>
+  <artifactId>quarkus-kubevirt</artifactId>
+  <name>Quarkus Kubevirt - Runtime</name>
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-arc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-kubernetes-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkiverse.kubevirt</groupId>
+      <artifactId>quarkus-kubevirt-client</artifactId>
     </dependency>
   </dependencies>
   <build>

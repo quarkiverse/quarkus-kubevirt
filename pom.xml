@@ -11,7 +11,7 @@
   <artifactId>quarkus-kubevirt-client-parent</artifactId>
   <version>999-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Quarkus Kubevirt Client - Parent</name>
+  <name>Quarkus Kubevirt - Parent</name>
 
   <modules>
     <module>templates</module>
@@ -25,6 +25,7 @@
     <module>model/snapshot</module>
     <module>model/ssp</module>
     <module>model/tektontasks</module>
+    <module>client</module>
     <module>deployment</module>
     <module>runtime</module>
     <module>docs</module>
@@ -54,6 +55,81 @@
         <version>${quarkus.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-v1</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-v1alpha3</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-cdi</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-export</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-hco</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-hostpathprovisioner</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-instancetype</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-network</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-pool</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-snapshot</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-ssp</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-model-tektontasks</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-client</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt-deployment</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkiverse.kubevirt</groupId>
+        <artifactId>quarkus-kubevirt</artifactId>
+        <version>${project.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

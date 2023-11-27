@@ -1,4 +1,4 @@
-# Quarkus Kubevirt Client
+# Quarkus Kubevirt
 
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.kubevirt/quarkus-kubevirt-client?logo=apache-maven&style=flat-square)](https://search.maven.org/artifact/io.quarkiverse.kubevirt/quarkus-kubevirt-client)
 

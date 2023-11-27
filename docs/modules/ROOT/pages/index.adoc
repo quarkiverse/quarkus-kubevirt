@@ -1,4 +1,4 @@
-= Quarkus Kubevirt Client
+= Quarkus Kubevirt
 
 include::./includes/attributes.adoc[]
 

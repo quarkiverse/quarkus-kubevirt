@@ -28,7 +28,7 @@
 
   <artifactId>quarkus-kubevirt-model-pool</artifactId>
   <packaging>jar</packaging>
-  <name>Quarkus Kubevirt Client - Model - Pool</name>
+  <name>Quarkus Kubevirt - Model - Pool</name>
 
   <properties>
     <clone-kube>true</clone-kube>
@@ -115,7 +115,7 @@
               <source>src/main/crds</source>
               <target>src/main/java</target>
               <packageOverrides>
-                <io.kubevirt.pool.v1alpha1>io.quarkus.kubevirt.pool.v1alpha1</io.kubevirt.pool.v1alpha1>
+                <io.kubevirt.pool.v1alpha1>io.quarkiverse.kubevirt.pool.v1alpha1</io.kubevirt.pool.v1alpha1>
               </packageOverrides>
             </configuration>
           </plugin>

@@ -28,7 +28,7 @@
 
   <artifactId>quarkus-kubevirt-model-network</artifactId>
   <packaging>jar</packaging>
-  <name>Quarkus Kubevirt Client - Model - Network</name>
+  <name>Quarkus Kubevirt - Model - Network</name>
 
   <properties>
     <clone-kube>true</clone-kube>
@@ -100,7 +100,7 @@
           <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>java-generator-maven-plugin</artifactId>
-            <version>${kubernetes-client.version}</version>
+            <version>6.10-SNAPSHOT</version>
             <executions>
               <execution>
                 <phase>generate-sources</phase>
@@ -115,7 +115,7 @@
               <source>src/main/crds</source>
               <target>src/main/java</target>
               <packageOverrides>
-                <io.kubevirt.network.networkaddonsoperator.v1>io.quarkus.kubevirt.network.networkaddonsoperator.v1</io.kubevirt.network.networkaddonsoperator.v1>
+                <io.kubevirt.network.networkaddonsoperator.v1>io.quarkiverse.kubevirt.network.networkaddonsoperator.v1</io.kubevirt.network.networkaddonsoperator.v1>
               </packageOverrides>
             </configuration>
           </plugin>

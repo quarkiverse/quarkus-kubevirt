@@ -1,1 +1,1 @@
-* xref:index.adoc[Quarkus Kubevirt Client]
+* xref:index.adoc[Quarkus Kubevirt]

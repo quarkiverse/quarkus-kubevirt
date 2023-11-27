@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>quarkus-kubevirt-client-docs</artifactId>
-    <name>Quarkus Kubevirt Client - Documentation</name>
+    <name>Quarkus Kubevirt - Documentation</name>
 
     <dependencies>
         <!-- Make sure the doc is built after the other artifacts -->

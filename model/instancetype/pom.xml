@@ -28,7 +28,7 @@
 
   <artifactId>quarkus-kubevirt-model-instancetype</artifactId>
   <packaging>jar</packaging>
-  <name>Quarkus Kubevirt Client - Model - Instance Type</name>
+  <name>Quarkus Kubevirt - Model - Instance Type</name>
 
   <properties>
     <clone-kube>true</clone-kube>
@@ -115,8 +115,8 @@
               <source>src/main/crds</source>
               <target>src/main/java</target>
               <packageOverrides>
-                <io.kubevirt.instancetype.v1alpha1>io.quarkus.kubevirt.instancetype.v1alpha1</io.kubevirt.instancetype.v1alpha1>
-                <io.kubevirt.instancetype.v1alpha2>io.quarkus.kubevirt.instancetype.v1alpha2</io.kubevirt.instancetype.v1alpha2>
+                <io.kubevirt.instancetype.v1alpha1>io.quarkiverse.kubevirt.instancetype.v1alpha1</io.kubevirt.instancetype.v1alpha1>
+                <io.kubevirt.instancetype.v1alpha2>io.quarkiverse.kubevirt.instancetype.v1alpha2</io.kubevirt.instancetype.v1alpha2>
               </packageOverrides>
             </configuration>
           </plugin>

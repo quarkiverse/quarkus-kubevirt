@@ -27,7 +27,7 @@
 
   <artifactId>quarkus-kubevirt-model-hostpathprovisioner</artifactId>
   <packaging>jar</packaging>
-  <name>Quarkus Kubevirt Client - Model - Hostpath Provisioner</name>
+  <name>Quarkus Kubevirt - Model - Hostpath Provisioner</name>
 
   <properties>
     <clone-kube>true</clone-kube>
@@ -114,7 +114,7 @@
               <source>src/main/crds</source>
               <target>src/main/java</target>
               <packageOverrides>
-                <io.kubevirt.hostpathprovisioner.v1beta1>io.quarkus.kubevirt.hostpathprovisioner.v1beta1</io.kubevirt.hostpathprovisioner.v1beta1>
+                <io.kubevirt.hostpathprovisioner.v1beta1>io.quarkiverse.kubevirt.hostpathprovisioner.v1beta1</io.kubevirt.hostpathprovisioner.v1beta1>
               </packageOverrides>
             </configuration>
           </plugin>
