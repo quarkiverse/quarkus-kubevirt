@@ -41,34 +41,6 @@ public class Custom implements io.fabric8.kubernetes.api.model.KubernetesResourc
         DHERSAAES128GCMSHA256("DHE-RSA-AES128-GCM-SHA256"),
         @com.fasterxml.jackson.annotation.JsonProperty("DHE-RSA-AES256-GCM-SHA384")
         DHERSAAES256GCMSHA384("DHE-RSA-AES256-GCM-SHA384"),
-        @com.fasterxml.jackson.annotation.JsonProperty("TLS_AES_128_GCM_SHA256")
-        TLS_AES_128_GCM_SHA256("TLS_AES_128_GCM_SHA256"),
-        @com.fasterxml.jackson.annotation.JsonProperty("TLS_AES_256_GCM_SHA384")
-        TLS_AES_256_GCM_SHA384("TLS_AES_256_GCM_SHA384"),
-        @com.fasterxml.jackson.annotation.JsonProperty("TLS_CHACHA20_POLY1305_SHA256")
-        TLS_CHACHA20_POLY1305_SHA256("TLS_CHACHA20_POLY1305_SHA256"),
-        @com.fasterxml.jackson.annotation.JsonProperty("TLS_AES_128_GCM_SHA256")
-        TLS_AES_128_GCM_SHA256("TLS_AES_128_GCM_SHA256"),
-        @com.fasterxml.jackson.annotation.JsonProperty("TLS_AES_256_GCM_SHA384")
-        TLS_AES_256_GCM_SHA384("TLS_AES_256_GCM_SHA384"),
-        @com.fasterxml.jackson.annotation.JsonProperty("TLS_CHACHA20_POLY1305_SHA256")
-        TLS_CHACHA20_POLY1305_SHA256("TLS_CHACHA20_POLY1305_SHA256"),
-        @com.fasterxml.jackson.annotation.JsonProperty("ECDHE-ECDSA-AES128-GCM-SHA256")
-        ECDHEECDSAAES128GCMSHA256("ECDHE-ECDSA-AES128-GCM-SHA256"),
-        @com.fasterxml.jackson.annotation.JsonProperty("ECDHE-RSA-AES128-GCM-SHA256")
-        ECDHERSAAES128GCMSHA256("ECDHE-RSA-AES128-GCM-SHA256"),
-        @com.fasterxml.jackson.annotation.JsonProperty("ECDHE-ECDSA-AES256-GCM-SHA384")
-        ECDHEECDSAAES256GCMSHA384("ECDHE-ECDSA-AES256-GCM-SHA384"),
-        @com.fasterxml.jackson.annotation.JsonProperty("ECDHE-RSA-AES256-GCM-SHA384")
-        ECDHERSAAES256GCMSHA384("ECDHE-RSA-AES256-GCM-SHA384"),
-        @com.fasterxml.jackson.annotation.JsonProperty("ECDHE-ECDSA-CHACHA20-POLY1305")
-        ECDHEECDSACHACHA20POLY1305("ECDHE-ECDSA-CHACHA20-POLY1305"),
-        @com.fasterxml.jackson.annotation.JsonProperty("ECDHE-RSA-CHACHA20-POLY1305")
-        ECDHERSACHACHA20POLY1305("ECDHE-RSA-CHACHA20-POLY1305"),
-        @com.fasterxml.jackson.annotation.JsonProperty("DHE-RSA-AES128-GCM-SHA256")
-        DHERSAAES128GCMSHA256("DHE-RSA-AES128-GCM-SHA256"),
-        @com.fasterxml.jackson.annotation.JsonProperty("DHE-RSA-AES256-GCM-SHA384")
-        DHERSAAES256GCMSHA384("DHE-RSA-AES256-GCM-SHA384"),
         @com.fasterxml.jackson.annotation.JsonProperty("DHE-RSA-CHACHA20-POLY1305")
         DHERSACHACHA20POLY1305("DHE-RSA-CHACHA20-POLY1305"),
         @com.fasterxml.jackson.annotation.JsonProperty("ECDHE-ECDSA-AES128-SHA256")
