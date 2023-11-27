@@ -1,6 +1,8 @@
 #set ($apiGroup = "")
 #set ($apiVersion = "v1")
+#set ($packageName  = "")
 #foreach ($entry in ${model.entrySet()})
+#set ($packageName  = $entry.getValue().getPackageName())
 #foreach ($annotation in ${entry.getValue().getAnnotations()})
 #if ($annotation.getClassRef().getFullyQualifiedName().equals("io.fabric8.kubernetes.model.annotation.Group"))
 #set ($apiGroup = $annotation.getParameters().get("value").replace(".kubevirt.io","").replace("kubevirt.io", ""))
@@ -10,11 +12,7 @@
 #end
 #end
 #end
-#if ($apiGroup.isEmpty())
-package io.quarkus.kubevirt.${apiVersion};
-#else
-package io.quarkus.kubevirt.${apiGroup}.${apiVersion};
-#end
+package $packageName;
 
 #foreach ($entry in ${model.entrySet()})
 import $entry.getKey();
@@ -25,7 +23,10 @@ import io.fabric8.kubernetes.client.extension.ClientAdapter;
 import io.fabric8.kubernetes.client.dsl.MixedOperation;
 import io.fabric8.kubernetes.client.dsl.Resource;
 
-#set ($className = "${apiGroup}${apiVersion}DSL")
+
+#set ($apiVersion = $apiVersion.substring(0,1).toUpperCase()+$apiVersion.substring(1))
+#set ($apiGroupLastDotIndex = $apiGroup.lastIndexOf(".") + 1)
+#set ($className = $apiGroup.substring($apiGroupLastDotIndex)+$apiVersion+"DSL")
 #set ($className = $className.substring(0,1).toUpperCase()+$className.substring(1))
 #set ($dslName = "$className")
 #set ($className = $className.replaceAll("DSL$", "Client"))
