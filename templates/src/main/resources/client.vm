@@ -25,10 +25,17 @@ import io.fabric8.kubernetes.client.extension.ClientAdapter;
 import io.fabric8.kubernetes.client.dsl.MixedOperation;
 import io.fabric8.kubernetes.client.dsl.Resource;
 
-#set ($dslName = "${apiGroup}${apiVersion}DSL")
-#set ($dslName = $className.substring(0,1).toUpperCase()+$className.substring(1))
-#set ($className = $className.replaceAll("DSL$","Client"))
-public class $className extends ClientAdapter<$className> implements $dslName {
+#set ($className = "${apiGroup}${apiVersion}DSL")
+#set ($className = $className.substring(0,1).toUpperCase()+$className.substring(1))
+#set ($dslName = "$className")
+#set ($className = $className.replaceAll("DSL$", "Client"))
+public class $className extends ClientAdapter implements $dslName {
+
+  @Override
+  public $className newInstance() {
+    return new $className();
+  }
+
 #foreach ($entry in ${model.entrySet()})
 #set ($plural = $entry.getValue().getName())
 #foreach ($annotation in ${entry.getValue().getAnnotations()})
@@ -36,7 +43,7 @@ public class $className extends ClientAdapter<$className> implements $dslName {
 #set ($plural = $annotation.getParameters().get("value"))
   @Override
   public MixedOperation<${entry.getValue().name}, ${entry.getValue().name}List, Resource<${entry.getValue().name}>> $plural() {
-    return resources(${entry.getValue().name}.class, ${entry.getValue().name}List.class));
+    return resources(${entry.getValue().name}.class, ${entry.getValue().name}List.class);
   }
 #end
 #end
