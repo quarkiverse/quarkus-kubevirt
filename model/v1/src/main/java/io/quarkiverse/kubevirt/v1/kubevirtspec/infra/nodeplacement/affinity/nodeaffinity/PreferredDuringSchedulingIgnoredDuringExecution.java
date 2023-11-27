@@ -51,4 +51,22 @@ public class PreferredDuringSchedulingIgnoredDuringExecution implements io.fabri
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
+
+    @com.fasterxml.jackson.annotation.JsonIgnore()
+    private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
+
+    @com.fasterxml.jackson.annotation.JsonAnyGetter()
+    public java.util.Map<String, Object> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonAnySetter()
+    public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
+        this.additionalProperties = additionalProperties;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonAnySetter()
+    public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
+        this.additionalProperties.put(key, value);
+    }
 }

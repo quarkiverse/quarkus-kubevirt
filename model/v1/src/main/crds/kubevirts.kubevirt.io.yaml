@@ -51,6 +51,11 @@ spec:
             type: string
           metadata:
             type: object
+            properties:
+              name:
+                type: string
+              namespace:
+                type: string
           spec:
             properties:
               certificateRotateStrategy:
@@ -2813,6 +2818,11 @@ spec:
             type: string
           metadata:
             type: object
+            properties:
+              name:
+                type: string
+              namespace:
+                type: string
           spec:
             properties:
               certificateRotateStrategy:

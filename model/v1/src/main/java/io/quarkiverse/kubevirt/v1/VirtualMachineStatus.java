@@ -200,4 +200,22 @@ public class VirtualMachineStatus implements io.fabric8.kubernetes.api.model.Kub
             java.util.List<io.quarkiverse.kubevirt.v1.virtualmachinestatus.VolumeSnapshotStatuses> volumeSnapshotStatuses) {
         this.volumeSnapshotStatuses = volumeSnapshotStatuses;
     }
+
+    @com.fasterxml.jackson.annotation.JsonIgnore()
+    private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
+
+    @com.fasterxml.jackson.annotation.JsonAnyGetter()
+    public java.util.Map<String, Object> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonAnySetter()
+    public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
+        this.additionalProperties = additionalProperties;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonAnySetter()
+    public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
+        this.additionalProperties.put(key, value);
+    }
 }

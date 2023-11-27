@@ -21,7 +21,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.quarkiverse.kubevirt</groupId>
-    <artifactId>quarkus-kubevirt-client-parent</artifactId>
+    <artifactId>quarkus-kubevirt-parent</artifactId>
     <version>999-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
@@ -112,6 +112,7 @@
             <configuration>
               <extraAnnotations>true</extraAnnotations>
               <generatedAnnotations>false</generatedAnnotations>
+              <alwaysPreserveUnknown>true</alwaysPreserveUnknown>
               <source>src/main/crds</source>
               <target>src/main/java</target>
               <packageOverrides>

@@ -64,6 +64,11 @@ spec:
             type: string
           metadata:
             type: object
+            properties:
+              name:
+                type: string
+              namespace:
+                type: string
           spec:
             description: Spec contains the specification of VirtualMachineInstance
               created
@@ -91,6 +96,11 @@ spec:
                     metadata:
                       nullable: true
                       type: object
+                      properties:
+                        name:
+                          type: string
+                        namespace:
+                          type: string
                       x-kubernetes-preserve-unknown-fields: true
                     spec:
                       description: DataVolumeSpec contains the DataVolume specification.
@@ -693,6 +703,11 @@ spec:
                   metadata:
                     nullable: true
                     type: object
+                    properties:
+                      name:
+                        type: string
+                      namespace:
+                        type: string
                     x-kubernetes-preserve-unknown-fields: true
                   spec:
                     description: VirtualMachineInstance Spec contains the VirtualMachineInstance
@@ -4168,6 +4183,11 @@ spec:
             type: string
           metadata:
             type: object
+            properties:
+              name:
+                type: string
+              namespace:
+                type: string
           spec:
             description: Spec contains the specification of VirtualMachineInstance
               created
@@ -4194,6 +4214,11 @@ spec:
                       type: string
                     metadata:
                       nullable: true
+                      properties:
+                        name:
+                          type: string
+                        namespace:
+                          type: string
                       type: object
                       x-kubernetes-preserve-unknown-fields: true
                     spec:
@@ -4796,6 +4821,11 @@ spec:
                 properties:
                   metadata:
                     nullable: true
+                    properties:
+                      name:
+                        type: string
+                      namespace:
+                        type: string
                     type: object
                     x-kubernetes-preserve-unknown-fields: true
                   spec:

@@ -365,4 +365,22 @@ public class Devices implements io.fabric8.kubernetes.api.model.KubernetesResour
     public void setWatchdog(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.devices.Watchdog watchdog) {
         this.watchdog = watchdog;
     }
+
+    @com.fasterxml.jackson.annotation.JsonIgnore()
+    private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
+
+    @com.fasterxml.jackson.annotation.JsonAnyGetter()
+    public java.util.Map<String, Object> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonAnySetter()
+    public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
+        this.additionalProperties = additionalProperties;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonAnySetter()
+    public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
+        this.additionalProperties.put(key, value);
+    }
 }
