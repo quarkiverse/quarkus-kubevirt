@@ -15,9 +15,16 @@ import io.quarkiverse.kubevirt.utils.Clients;
 import io.quarkiverse.kubevirt.v1.VirtualMachine;
 import io.quarkiverse.kubevirt.v1.VirtualMachineInstance;
 import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
 
 @Command(name = "podman", sortOptions = false, mixinStandardHelpOptions = false, header = "Create a VM for Podman")
 public class VmCreatePodman extends AbstractVmCreate {
+
+    @Option(names = { "--configure-testcontainers" }, description = "Configure test containers to use the new vm.")
+    protected boolean configureTestcontainers;
+
+    @Option(names = { "--podman-port" }, description = "Configure test containers to use the new vm.")
+    protected Integer podmanPort = 2376;
 
     @Override
     public InputStream getInputStream() {
@@ -26,14 +33,13 @@ public class VmCreatePodman extends AbstractVmCreate {
 
     @Override
     public void onReady(List<VirtualMachine> virtualMachines) {
-        //Ensure there is a single VM, get its IP address and create an .env file in the project root that contains an enty `DOCKER_HOST=tcp://$ip:2376`
-        if (virtualMachines.size() == 1) {
+        if (configureTestcontainers && virtualMachines.size() == 1) {
             VirtualMachine virtualMachine = virtualMachines.get(0);
             VirtualMachineInstance virtualMachineInstance = Clients.kubevirt().v1().virtualmachineinstances()
                     .inNamespace(virtualMachine.getMetadata().getNamespace()).withName(virtualMachine.getMetadata().getName())
                     .get();
             String ipAddress = virtualMachineInstance.getStatus().getInterfaces().get(0).getIpAddresses().get(0);
-            String dockerHostValue = "tcp://" + ipAddress + ":2376";
+            String dockerHostValue = "tcp://" + ipAddress + ":" + podmanPort;
             Path userHome = Paths.get(System.getProperty("user.home"));
             Path testContainerProperties = userHome.resolve(".testcontainers.properties");
             updatePropertyFile(testContainerProperties.toFile(), "docker.host", dockerHostValue);
