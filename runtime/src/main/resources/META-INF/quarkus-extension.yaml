@@ -1,9 +1,12 @@
-name: Kubevirt
-#description: Do something useful.
+name: Quarkus - Kubevrit
+description: Quarkus extension for Kubevrit
 metadata:
-#  keywords:
-#    - kubevirt-client
-#  guide: https://quarkiverse.github.io/quarkiverse-docs/kubevirt-client/dev/ # To create and publish this guide, see https://github.com/quarkiverse/quarkiverse/wiki#documenting-your-extension
-#  categories:
-#    - "miscellaneous"
-#  status: "preview"
+  keywords:
+  - kubevirt
+  - kubernetes
+  - openshift
+  categories:
+  - "cloud"
+  status: "preview"
+  cli-plugins:
+   - "${project.groupId}:quarkus-kubevrit-cli:${project.version}"
