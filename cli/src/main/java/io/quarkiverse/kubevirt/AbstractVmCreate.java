@@ -1,42 +1,35 @@
 package io.quarkiverse.kubevirt;
 
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import io.fabric8.kubernetes.api.builder.Visitor;
 import io.fabric8.kubernetes.api.model.HasMetadata;
-import io.quarkiverse.kubevirt.common.OutputOptionMixin;
-import io.quarkiverse.kubevirt.common.Table;
+import io.fabric8.kubernetes.api.model.Secret;
+import io.fabric8.kubernetes.api.model.SecretBuilder;
 import io.quarkiverse.kubevirt.utils.Clients;
-import io.quarkiverse.kubevirt.utils.Tables;
 import io.quarkiverse.kubevirt.v1.VirtualMachine;
+import io.quarkiverse.kubevirt.visitors.AddAccessCredentialsToVirtualMachine;
+import io.quarkiverse.kubevirt.visitors.ApplyNamespace;
 import picocli.CommandLine;
-import picocli.CommandLine.Mixin;
-import picocli.CommandLine.Model.CommandSpec;
-import picocli.CommandLine.Spec;
+import picocli.CommandLine.Option;
 
-public abstract class AbstractVmCreate implements Callable<Integer> {
+public abstract class AbstractVmCreate extends AbstractVmCommand {
 
-    public static final List<VirtualMachine> VMS = new ArrayList<>();
-    public static final Table<VirtualMachine> TABLE = Tables.forVirtualMachines(VMS);
-
-    @Mixin
-    protected OutputOptionMixin output;
-
-    @Spec
-    protected CommandSpec spec;
-
-    @CommandLine.Option(names = { "-w", "--wait-until-ready" }, description = "Wait until ready.")
-    protected boolean waitUntilReady;
-
-    @CommandLine.Option(names = { "-r", "--replace-existing" }, description = "Replace existing matching VMs.")
+    @Option(names = { "-r", "--replace-existing" }, description = "Replace existing matching VMs.")
     protected boolean replaceExisting;
 
-    @CommandLine.Option(names = { "-h", "--help" }, usageHelp = true, description = "Display this help message.")
-    protected boolean help;
+    @Option(names = { "-k", "--public-key" }, description = "Path to public key.")
+    protected Path publicKey;
+
+    @Option(names = { "-s", "--ssh-secret" }, description = "The name of the ssh secret.")
+    protected String sshSecretName = "quarkus-dev-secret";
 
     public abstract InputStream getInputStream();
 
@@ -48,6 +41,7 @@ public abstract class AbstractVmCreate implements Callable<Integer> {
 
     @Override
     public Integer call() {
+        List<Visitor<?>> visitors = new ArrayList<>();
         if (replaceExisting) {
             deleteExistingVirtualMachines();
         }
@@ -62,21 +56,49 @@ public abstract class AbstractVmCreate implements Callable<Integer> {
                 return CommandLine.ExitCode.SOFTWARE;
             }
 
-            List<HasMetadata> createdResources = Clients.kubernetes().load(is).create();
+            if (namespace != null && !namespace.isEmpty()) {
+                visitors.add(new ApplyNamespace(namespace));
+            }
+
+            if (publicKey != null) {
+                if (!publicKey.toFile().exists()) {
+                    output.error("Public key file: " + publicKey.toAbsolutePath() + " does not exist");
+                    return CommandLine.ExitCode.USAGE;
+                }
+
+                Secret secret = new SecretBuilder()
+                        .withNewMetadata()
+                        .withName(sshSecretName)
+                        .withNamespace(namespace)
+                        .endMetadata()
+                        .withType("Opaque")
+                        .addToData("key", Base64.getEncoder().encodeToString(Files.readString(publicKey).getBytes()))
+                        .build();
+
+                Clients.kubernetes().resource(secret).serverSideApply();
+                visitors.add(new AddAccessCredentialsToVirtualMachine(sshSecretName));
+            }
+
+            List<HasMetadata> createdResources = Clients.kubernetes().load(is)
+                    .accept(visitors.toArray(new Visitor[visitors.size()])).create();
             final List<VirtualMachine> createdVms = createdResources.stream().filter(i -> i instanceof VirtualMachine)
                     .map(VirtualMachine.class::cast).collect(Collectors.toList());
             onCreated(createdVms);
             VMS.addAll(createdVms);
 
-            output.info("Created VMs:");
-            TABLE.print();
-            if (waitUntilReady) {
+            if (!shouldWaitUntilReady()) {
+                output.info("Created VMs:");
+                TABLE.print();
+            } else {
+                output.info("Waiting for VMs:");
+                TABLE.print();
                 Clients.kubernetes().resourceList(createdVms).waitUntilCondition(
                         vm -> vm instanceof VirtualMachine &&
                                 ((VirtualMachine) vm).getStatus() != null &&
                                 ((VirtualMachine) vm).getStatus().getReady() != null &&
                                 ((VirtualMachine) vm).getStatus().getReady(),
                         5L, TimeUnit.MINUTES);
+
                 List<VirtualMachine> readyVms = Clients.kubernetes().resourceList(createdVms).get().stream()
                         .filter(i -> i instanceof VirtualMachine).map(VirtualMachine.class::cast).collect(Collectors.toList());
                 VMS.clear();
@@ -91,9 +113,11 @@ public abstract class AbstractVmCreate implements Callable<Integer> {
         }
     }
 
+    @Override
     public List<VirtualMachine> existingVirtualMachines() {
         try (InputStream is = getInputStream()) {
-            return Clients.kubernetes().load(is).get().stream().filter(i -> i instanceof VirtualMachine)
+            return Clients.kubernetes().load(is).accept(new ApplyNamespace(namespace)).get().stream()
+                    .filter(i -> i instanceof VirtualMachine)
                     .map(VirtualMachine.class::cast).collect(Collectors.toList());
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -102,7 +126,7 @@ public abstract class AbstractVmCreate implements Callable<Integer> {
 
     public void deleteExistingVirtualMachines() {
         try (InputStream is = getInputStream()) {
-            List<HasMetadata> existingResources = Clients.kubernetes().load(is).get();
+            List<HasMetadata> existingResources = Clients.kubernetes().load(is).accept(new ApplyNamespace(namespace)).get();
             final List<VirtualMachine> existingVms = existingResources.stream().filter(i -> i instanceof VirtualMachine)
                     .map(VirtualMachine.class::cast).collect(Collectors.toList());
             for (VirtualMachine vm : existingVms) {

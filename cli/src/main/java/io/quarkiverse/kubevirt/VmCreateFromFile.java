@@ -5,13 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.file.Path;
 
-import picocli.CommandLine;
 import picocli.CommandLine.Command;
+import picocli.CommandLine.Parameters;
 
-@Command(name = "from-file", sortOptions = false, mixinStandardHelpOptions = false, header = "List Kubevirt VMs")
+@Command(name = "from-file", sortOptions = false, mixinStandardHelpOptions = false, header = "Create virtual machines from the specified file (CRD)")
 public class VmCreateFromFile extends AbstractVmCreate {
 
-    @CommandLine.Parameters(index = "0", description = "Path to file")
+    @Parameters(index = "0", description = "Path to file")
     public Path path;
 
     @Override

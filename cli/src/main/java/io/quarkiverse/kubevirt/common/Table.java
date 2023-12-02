@@ -1,5 +1,6 @@
 package io.quarkiverse.kubevirt.common;
 
+import java.io.PrintWriter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -8,17 +9,22 @@ import java.util.stream.Stream;
 
 public class Table<T> {
 
+    private PrintWriter out;
     private List<String> headers;
     private List<Function<T, String>> mappers;
     private List<T> items;
-    private int[] lengths;
 
     private int linesPrinted = 0;
 
     public Table(List<String> headers, List<Function<T, String>> mappers, List<T> items) {
+        this(new PrintWriter(System.out, true), headers, mappers, items);
+    }
+
+    public Table(PrintWriter out, List<String> headers, List<Function<T, String>> mappers, List<T> items) {
         this.headers = headers;
         this.mappers = mappers;
         this.items = items;
+        this.out = out;
 
         if (headers.size() != mappers.size()) {
             throw new IllegalArgumentException("Headers and mappers must have the same length");
@@ -26,20 +32,19 @@ public class Table<T> {
     }
 
     public void print() {
-        System.out.println(String.format(getFormat(), headers.stream().map(String::toUpperCase).toArray()));
+        out.println(String.format(getFormat(), headers.stream().map(String::toUpperCase).toArray()));
         linesPrinted++;
         for (int i = 0; i < items.size(); i++) {
             T item = items.get(i);
-            System.out
-                    .println(String.format(getFormat(),
-                            mappers.stream().map(m -> m.apply(item)).map(s -> s != null ? s : "").toArray()));
+            out.println(String.format(getFormat(),
+                    mappers.stream().map(m -> m.apply(item)).map(s -> s != null ? s : "").toArray()));
 
             linesPrinted++;
         }
     }
 
     public void refresh() {
-        System.out.printf("\033[%dA\033[0J", linesPrinted);
+        out.printf("\033[%dA\033[0J", linesPrinted);
         linesPrinted = 0;
         print();
     }

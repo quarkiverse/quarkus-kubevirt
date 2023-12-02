@@ -12,7 +12,9 @@ import picocli.CommandLine.Spec;
 
 @Command(name = "vm", sortOptions = false, mixinStandardHelpOptions = false, header = "Vm", subcommands = {
         VmCreate.class,
-        VmList.class }, headerHeading = "%n", commandListHeading = "%nCommands:%n", synopsisHeading = "%nUsage: ", optionListHeading = "%nOptions:%n")
+        VmDelete.class,
+        VmList.class,
+        VmUsePodman.class }, headerHeading = "%n", commandListHeading = "%nCommands:%n", synopsisHeading = "%nUsage: ", optionListHeading = "%nOptions:%n")
 public class Vm implements Callable<Integer> {
 
     @Mixin(name = "output")

@@ -20,15 +20,21 @@ import picocli.CommandLine.Option;
 @Command(name = "podman", sortOptions = false, mixinStandardHelpOptions = false, header = "Create a VM for Podman")
 public class VmCreatePodman extends AbstractVmCreate {
 
-    @Option(names = { "--configure-testcontainers" }, description = "Configure test containers to use the new vm.")
+    @Option(names = { "-c",
+            "--configure-testcontainers" }, description = "Configure testcontainers to use the new virtual machine")
     protected boolean configureTestcontainers;
 
-    @Option(names = { "--podman-port" }, description = "Configure test containers to use the new vm.")
+    @Option(names = { "-p", "--podman-port" }, description = "The port that podman is exposed")
     protected Integer podmanPort = 2376;
 
     @Override
     public InputStream getInputStream() {
-        return getClass().getClassLoader().getResourceAsStream("podman-vm.yaml");
+        return getClass().getClassLoader().getResourceAsStream("quarkus-dev-virtualmachine.yaml");
+    }
+
+    @Override
+    public boolean shouldWaitUntilReady() {
+        return super.shouldWaitUntilReady() || configureTestcontainers;
     }
 
     @Override
@@ -43,6 +49,7 @@ public class VmCreatePodman extends AbstractVmCreate {
             Path userHome = Paths.get(System.getProperty("user.home"));
             Path testContainerProperties = userHome.resolve(".testcontainers.properties");
             updatePropertyFile(testContainerProperties.toFile(), "docker.host", dockerHostValue);
+            updatePropertyFile(testContainerProperties.toFile(), "testcontainers.reuse.enable", "false");
         }
     }
 
