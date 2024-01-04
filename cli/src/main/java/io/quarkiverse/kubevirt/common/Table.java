@@ -9,68 +9,68 @@ import java.util.stream.Stream;
 
 public class Table<T> {
 
-    private PrintWriter out;
-    private List<String> headers;
-    private List<Function<T, String>> mappers;
-    private List<T> items;
+  private PrintWriter out;
+  private List<String> headers;
+  private List<Function<T, String>> mappers;
+  private List<T> items;
 
-    private int linesPrinted = 0;
+  private int linesPrinted = 0;
 
-    public Table(List<String> headers, List<Function<T, String>> mappers, List<T> items) {
-        this(new PrintWriter(System.out, true), headers, mappers, items);
+  public Table(List<String> headers, List<Function<T, String>> mappers, List<T> items) {
+    this(new PrintWriter(System.out, true), headers, mappers, items);
+  }
+
+  public Table(PrintWriter out, List<String> headers, List<Function<T, String>> mappers, List<T> items) {
+    this.headers = headers;
+    this.mappers = mappers;
+    this.items = items;
+    this.out = out;
+
+    if (headers.size() != mappers.size()) {
+      throw new IllegalArgumentException("Headers and mappers must have the same length");
     }
+  }
 
-    public Table(PrintWriter out, List<String> headers, List<Function<T, String>> mappers, List<T> items) {
-        this.headers = headers;
-        this.mappers = mappers;
-        this.items = items;
-        this.out = out;
+  public void print() {
+    out.println(String.format(getFormat(), headers.stream().map(String::toUpperCase).toArray()));
+    linesPrinted++;
+    for (int i = 0; i < items.size(); i++) {
+      T item = items.get(i);
+      out.println(String.format(getFormat(),
+          mappers.stream().map(m -> m.apply(item)).map(s -> s != null ? s : "").toArray()));
 
-        if (headers.size() != mappers.size()) {
-            throw new IllegalArgumentException("Headers and mappers must have the same length");
-        }
+      linesPrinted++;
     }
+  }
 
-    public void print() {
-        out.println(String.format(getFormat(), headers.stream().map(String::toUpperCase).toArray()));
-        linesPrinted++;
-        for (int i = 0; i < items.size(); i++) {
-            T item = items.get(i);
-            out.println(String.format(getFormat(),
-                    mappers.stream().map(m -> m.apply(item)).map(s -> s != null ? s : "").toArray()));
+  public void refresh() {
+    out.printf("\033[%dA\033[0J", linesPrinted);
+    linesPrinted = 0;
+    print();
+  }
 
-            linesPrinted++;
-        }
+  private String getFormat() {
+    StringBuilder sb = new StringBuilder();
+    int lengths[] = getLengths();
+    for (int i = 0; i < lengths.length; i++) {
+      sb.append(" %-" + lengths[i] + "s ");
+      sb.append("\t");
     }
+    return sb.toString();
+  }
 
-    public void refresh() {
-        out.printf("\033[%dA\033[0J", linesPrinted);
-        linesPrinted = 0;
-        print();
+  private int[] getLengths() {
+    int[] result = new int[headers.size()];
+    for (int i = 0; i < headers.size(); i++) {
+
+      int length = Stream.concat(Stream.of(headers.get(i)), items.stream().map(mappers.get(i)))
+          .filter(Objects::nonNull)
+          .map(String::length)
+          .max(Comparator.naturalOrder())
+          .orElse(0);
+
+      result[i] = length;
     }
-
-    private String getFormat() {
-        StringBuilder sb = new StringBuilder();
-        int lengths[] = getLengths();
-        for (int i = 0; i < lengths.length; i++) {
-            sb.append(" %-" + lengths[i] + "s ");
-            sb.append("\t");
-        }
-        return sb.toString();
-    }
-
-    private int[] getLengths() {
-        int[] result = new int[headers.size()];
-        for (int i = 0; i < headers.size(); i++) {
-
-            int length = Stream.concat(Stream.of(headers.get(i)), items.stream().map(mappers.get(i)))
-                    .filter(Objects::nonNull)
-                    .map(String::length)
-                    .max(Comparator.naturalOrder())
-                    .orElse(0);
-
-            result[i] = length;
-        }
-        return result;
-    }
+    return result;
+  }
 }

@@ -11,36 +11,36 @@ import picocli.CommandLine.Command;
 
 @TopCommand
 @Command(name = "kubevirt", sortOptions = false, mixinStandardHelpOptions = false, header = "OpenShift VM CLI", subcommands = {
-        VmCreate.class,
-        VmDelete.class,
-        VmList.class,
-        VmUsePodman.class })
+    VmCreate.class,
+    VmDelete.class,
+    VmList.class,
+    VmUsePodman.class })
 public class KubevirtCommand implements Callable<Integer> {
 
-    static {
-        System.setProperty("picocli.endofoptions.description", "End of command line options.");
-    }
+  static {
+    System.setProperty("picocli.endofoptions.description", "End of command line options.");
+  }
 
-    @Inject
-    CommandLine.IFactory factory;
+  @Inject
+  CommandLine.IFactory factory;
 
-    @CommandLine.Mixin(name = "output")
-    OutputOptionMixin output;
+  @CommandLine.Mixin(name = "output")
+  OutputOptionMixin output;
 
-    @CommandLine.Spec
-    protected CommandLine.Model.CommandSpec spec;
+  @CommandLine.Spec
+  protected CommandLine.Model.CommandSpec spec;
 
-    @Override
-    public Integer call() {
-        CommandLine schemaCommand = spec.subcommands().get("list");
-        return schemaCommand.execute();
-    }
+  @Override
+  public Integer call() {
+    CommandLine schemaCommand = spec.subcommands().get("list");
+    return schemaCommand.execute();
+  }
 
-    public OutputOptionMixin getOutput() {
-        return output;
-    }
+  public OutputOptionMixin getOutput() {
+    return output;
+  }
 
-    public CommandLine.Model.CommandSpec getSpec() {
-        return spec;
-    }
+  public CommandLine.Model.CommandSpec getSpec() {
+    return spec;
+  }
 }

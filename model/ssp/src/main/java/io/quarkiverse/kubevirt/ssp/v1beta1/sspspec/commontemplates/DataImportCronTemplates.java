@@ -6,44 +6,44 @@ package io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates;
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class DataImportCronTemplates implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Metadata metadata;
+  @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Metadata metadata;
 
-    public io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Metadata getMetadata() {
-        return metadata;
-    }
+  public io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Metadata getMetadata() {
+    return metadata;
+  }
 
-    public void setMetadata(
-            io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Metadata metadata) {
-        this.metadata = metadata;
-    }
+  public void setMetadata(
+      io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Metadata metadata) {
+    this.metadata = metadata;
+  }
 
-    /**
-     * DataImportCronSpec defines specification for DataImportCron
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("spec")
-    @io.fabric8.generator.annotation.Required()
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("DataImportCronSpec defines specification for DataImportCron")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Spec spec;
+  /**
+   * DataImportCronSpec defines specification for DataImportCron
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("spec")
+  @io.fabric8.generator.annotation.Required()
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("DataImportCronSpec defines specification for DataImportCron")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Spec spec;
 
-    public io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Spec getSpec() {
-        return spec;
-    }
+  public io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Spec getSpec() {
+    return spec;
+  }
 
-    public void setSpec(io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Spec spec) {
-        this.spec = spec;
-    }
+  public void setSpec(io.quarkiverse.kubevirt.ssp.v1beta1.sspspec.commontemplates.dataimportcrontemplates.Spec spec) {
+    this.spec = spec;
+  }
 }

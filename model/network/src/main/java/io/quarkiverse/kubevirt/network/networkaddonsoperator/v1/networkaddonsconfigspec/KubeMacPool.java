@@ -6,46 +6,46 @@ package io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsco
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class KubeMacPool implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * RangeEnd defines the first mac in range
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("rangeEnd")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("RangeEnd defines the first mac in range")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String rangeEnd;
+  /**
+   * RangeEnd defines the first mac in range
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("rangeEnd")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("RangeEnd defines the first mac in range")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String rangeEnd;
 
-    public String getRangeEnd() {
-        return rangeEnd;
-    }
+  public String getRangeEnd() {
+    return rangeEnd;
+  }
 
-    public void setRangeEnd(String rangeEnd) {
-        this.rangeEnd = rangeEnd;
-    }
+  public void setRangeEnd(String rangeEnd) {
+    this.rangeEnd = rangeEnd;
+  }
 
-    /**
-     * RangeStart defines the first mac in range
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("rangeStart")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("RangeStart defines the first mac in range")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String rangeStart;
+  /**
+   * RangeStart defines the first mac in range
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("rangeStart")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("RangeStart defines the first mac in range")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String rangeStart;
 
-    public String getRangeStart() {
-        return rangeStart;
-    }
+  public String getRangeStart() {
+    return rangeStart;
+  }
 
-    public void setRangeStart(String rangeStart) {
-        this.rangeStart = rangeStart;
-    }
+  public void setRangeStart(String rangeStart) {
+    this.rangeStart = rangeStart;
+  }
 }

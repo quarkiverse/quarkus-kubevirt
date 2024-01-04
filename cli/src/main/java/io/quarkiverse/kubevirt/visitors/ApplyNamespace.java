@@ -5,15 +5,15 @@ import io.fabric8.kubernetes.api.model.ObjectMetaFluent;
 
 public class ApplyNamespace extends TypedVisitor<ObjectMetaFluent<?>> {
 
-    private final String namespace;
+  private final String namespace;
 
-    public ApplyNamespace(String namespace) {
-        this.namespace = namespace;
-    }
+  public ApplyNamespace(String namespace) {
+    this.namespace = namespace;
+  }
 
-    @Override
-    public void visit(ObjectMetaFluent<?> metadata) {
-        metadata.withNamespace(namespace);
-    }
+  @Override
+  public void visit(ObjectMetaFluent<?> metadata) {
+    metadata.withNamespace(namespace);
+  }
 
 }

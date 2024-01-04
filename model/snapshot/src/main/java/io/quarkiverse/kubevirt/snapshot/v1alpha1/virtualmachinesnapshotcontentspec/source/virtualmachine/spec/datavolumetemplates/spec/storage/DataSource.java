@@ -6,65 +6,65 @@ package io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontents
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class DataSource implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the
-     * core API group. For any other third-party types, APIGroup is required.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("apiGroup")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String apiGroup;
+  /**
+   * APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the
+   * core API group. For any other third-party types, APIGroup is required.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("apiGroup")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String apiGroup;
 
-    public String getApiGroup() {
-        return apiGroup;
-    }
+  public String getApiGroup() {
+    return apiGroup;
+  }
 
-    public void setApiGroup(String apiGroup) {
-        this.apiGroup = apiGroup;
-    }
+  public void setApiGroup(String apiGroup) {
+    this.apiGroup = apiGroup;
+  }
 
-    /**
-     * Kind is the type of resource being referenced
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("kind")
-    @io.fabric8.generator.annotation.Required()
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Kind is the type of resource being referenced")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String kind;
+  /**
+   * Kind is the type of resource being referenced
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("kind")
+  @io.fabric8.generator.annotation.Required()
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Kind is the type of resource being referenced")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String kind;
 
-    public String getKind() {
-        return kind;
-    }
+  public String getKind() {
+    return kind;
+  }
 
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
+  public void setKind(String kind) {
+    this.kind = kind;
+  }
 
-    /**
-     * Name is the name of resource being referenced
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @io.fabric8.generator.annotation.Required()
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Name is the name of resource being referenced")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String name;
+  /**
+   * Name is the name of resource being referenced
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("name")
+  @io.fabric8.generator.annotation.Required()
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Name is the name of resource being referenced")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String name;
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 }

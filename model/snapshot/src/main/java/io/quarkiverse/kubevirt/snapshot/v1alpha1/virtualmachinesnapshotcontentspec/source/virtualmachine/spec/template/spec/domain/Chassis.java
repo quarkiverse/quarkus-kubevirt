@@ -6,74 +6,74 @@ package io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontents
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Chassis implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    @com.fasterxml.jackson.annotation.JsonProperty("asset")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String asset;
+  @com.fasterxml.jackson.annotation.JsonProperty("asset")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String asset;
 
-    public String getAsset() {
-        return asset;
-    }
+  public String getAsset() {
+    return asset;
+  }
 
-    public void setAsset(String asset) {
-        this.asset = asset;
-    }
+  public void setAsset(String asset) {
+    this.asset = asset;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("manufacturer")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String manufacturer;
+  @com.fasterxml.jackson.annotation.JsonProperty("manufacturer")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String manufacturer;
 
-    public String getManufacturer() {
-        return manufacturer;
-    }
+  public String getManufacturer() {
+    return manufacturer;
+  }
 
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
+  public void setManufacturer(String manufacturer) {
+    this.manufacturer = manufacturer;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("serial")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String serial;
+  @com.fasterxml.jackson.annotation.JsonProperty("serial")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String serial;
 
-    public String getSerial() {
-        return serial;
-    }
+  public String getSerial() {
+    return serial;
+  }
 
-    public void setSerial(String serial) {
-        this.serial = serial;
-    }
+  public void setSerial(String serial) {
+    this.serial = serial;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sku")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String sku;
+  @com.fasterxml.jackson.annotation.JsonProperty("sku")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String sku;
 
-    public String getSku() {
-        return sku;
-    }
+  public String getSku() {
+    return sku;
+  }
 
-    public void setSku(String sku) {
-        this.sku = sku;
-    }
+  public void setSku(String sku) {
+    this.sku = sku;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("version")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String version;
+  @com.fasterxml.jackson.annotation.JsonProperty("version")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String version;
 
-    public String getVersion() {
-        return version;
-    }
+  public String getVersion() {
+    return version;
+  }
 
-    public void setVersion(String version) {
-        this.version = version;
-    }
+  public void setVersion(String version) {
+    this.version = version;
+  }
 }

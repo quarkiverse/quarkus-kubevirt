@@ -6,48 +6,48 @@ package io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontents
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class BlockSize implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * CustomBlockSize represents the desired logical and physical block size for a VM disk.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("custom")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("CustomBlockSize represents the desired logical and physical block size for a VM disk.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.Custom custom;
+  /**
+   * CustomBlockSize represents the desired logical and physical block size for a VM disk.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("custom")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("CustomBlockSize represents the desired logical and physical block size for a VM disk.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.Custom custom;
 
-    public io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.Custom getCustom() {
-        return custom;
-    }
+  public io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.Custom getCustom() {
+    return custom;
+  }
 
-    public void setCustom(
-            io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.Custom custom) {
-        this.custom = custom;
-    }
+  public void setCustom(
+      io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.Custom custom) {
+    this.custom = custom;
+  }
 
-    /**
-     * Represents if a feature is enabled or disabled.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("matchVolume")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Represents if a feature is enabled or disabled.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.MatchVolume matchVolume;
+  /**
+   * Represents if a feature is enabled or disabled.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("matchVolume")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Represents if a feature is enabled or disabled.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.MatchVolume matchVolume;
 
-    public io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.MatchVolume getMatchVolume() {
-        return matchVolume;
-    }
+  public io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.MatchVolume getMatchVolume() {
+    return matchVolume;
+  }
 
-    public void setMatchVolume(
-            io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.MatchVolume matchVolume) {
-        this.matchVolume = matchVolume;
-    }
+  public void setMatchVolume(
+      io.quarkiverse.kubevirt.snapshot.v1alpha1.virtualmachinesnapshotcontentspec.source.virtualmachine.status.volumerequests.addvolumeoptions.disk.blocksize.MatchVolume matchVolume) {
+    this.matchVolume = matchVolume;
+  }
 }

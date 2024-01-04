@@ -7,9 +7,9 @@ import io.quarkiverse.kubevirt.v1.V1DSL;
 
 public interface KubevirtClient extends Client {
 
-    V1DSL v1();
+  V1DSL v1();
 
-    CdiV1beta1DSL cdiV1beta1();
+  CdiV1beta1DSL cdiV1beta1();
 
-    PoolV1alpha1DSL poolV1alpha1();
+  PoolV1alpha1DSL poolV1alpha1();
 }

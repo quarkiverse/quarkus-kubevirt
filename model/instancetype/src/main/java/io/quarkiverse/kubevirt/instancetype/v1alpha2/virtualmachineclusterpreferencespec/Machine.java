@@ -6,30 +6,30 @@ package io.quarkiverse.kubevirt.instancetype.v1alpha2.virtualmachineclusterprefe
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Machine implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * PreferredMachineType optionally defines the preferred machine type to use.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("preferredMachineType")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("PreferredMachineType optionally defines the preferred machine type to use.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String preferredMachineType;
+  /**
+   * PreferredMachineType optionally defines the preferred machine type to use.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("preferredMachineType")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("PreferredMachineType optionally defines the preferred machine type to use.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String preferredMachineType;
 
-    public String getPreferredMachineType() {
-        return preferredMachineType;
-    }
+  public String getPreferredMachineType() {
+    return preferredMachineType;
+  }
 
-    public void setPreferredMachineType(String preferredMachineType) {
-        this.preferredMachineType = preferredMachineType;
-    }
+  public void setPreferredMachineType(String preferredMachineType) {
+    this.preferredMachineType = preferredMachineType;
+  }
 }

@@ -6,56 +6,56 @@ package io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsco
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Workloads implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * Affinity is a group of affinity scheduling rules.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("affinity")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Affinity is a group of affinity scheduling rules.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Affinity affinity;
+  /**
+   * Affinity is a group of affinity scheduling rules.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("affinity")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Affinity is a group of affinity scheduling rules.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Affinity affinity;
 
-    public io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Affinity getAffinity() {
-        return affinity;
-    }
+  public io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Affinity getAffinity() {
+    return affinity;
+  }
 
-    public void setAffinity(
-            io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Affinity affinity) {
-        this.affinity = affinity;
-    }
+  public void setAffinity(
+      io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Affinity affinity) {
+    this.affinity = affinity;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("nodeSelector")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private java.util.Map<java.lang.String, String> nodeSelector;
+  @com.fasterxml.jackson.annotation.JsonProperty("nodeSelector")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private java.util.Map<java.lang.String, String> nodeSelector;
 
-    public java.util.Map<java.lang.String, String> getNodeSelector() {
-        return nodeSelector;
-    }
+  public java.util.Map<java.lang.String, String> getNodeSelector() {
+    return nodeSelector;
+  }
 
-    public void setNodeSelector(java.util.Map<java.lang.String, String> nodeSelector) {
-        this.nodeSelector = nodeSelector;
-    }
+  public void setNodeSelector(java.util.Map<java.lang.String, String> nodeSelector) {
+    this.nodeSelector = nodeSelector;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("tolerations")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private java.util.List<io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Tolerations> tolerations;
+  @com.fasterxml.jackson.annotation.JsonProperty("tolerations")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private java.util.List<io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Tolerations> tolerations;
 
-    public java.util.List<io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Tolerations> getTolerations() {
-        return tolerations;
-    }
+  public java.util.List<io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Tolerations> getTolerations() {
+    return tolerations;
+  }
 
-    public void setTolerations(
-            java.util.List<io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Tolerations> tolerations) {
-        this.tolerations = tolerations;
-    }
+  public void setTolerations(
+      java.util.List<io.quarkiverse.kubevirt.network.networkaddonsoperator.v1.networkaddonsconfigspec.placementconfiguration.workloads.Tolerations> tolerations) {
+    this.tolerations = tolerations;
+  }
 }

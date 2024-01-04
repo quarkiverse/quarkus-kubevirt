@@ -6,48 +6,48 @@ package io.quarkiverse.kubevirt.v1alpha3.kubevirtspec;
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Workloads implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * nodePlacement describes scheduling configuration for specific KubeVirt components
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("nodePlacement")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("nodePlacement describes scheduling configuration for specific KubeVirt components")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1alpha3.kubevirtspec.workloads.NodePlacement nodePlacement;
+  /**
+   * nodePlacement describes scheduling configuration for specific KubeVirt components
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("nodePlacement")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("nodePlacement describes scheduling configuration for specific KubeVirt components")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1alpha3.kubevirtspec.workloads.NodePlacement nodePlacement;
 
-    public io.quarkiverse.kubevirt.v1alpha3.kubevirtspec.workloads.NodePlacement getNodePlacement() {
-        return nodePlacement;
-    }
+  public io.quarkiverse.kubevirt.v1alpha3.kubevirtspec.workloads.NodePlacement getNodePlacement() {
+    return nodePlacement;
+  }
 
-    public void setNodePlacement(io.quarkiverse.kubevirt.v1alpha3.kubevirtspec.workloads.NodePlacement nodePlacement) {
-        this.nodePlacement = nodePlacement;
-    }
+  public void setNodePlacement(io.quarkiverse.kubevirt.v1alpha3.kubevirtspec.workloads.NodePlacement nodePlacement) {
+    this.nodePlacement = nodePlacement;
+  }
 
-    /**
-     * replicas indicates how many replicas should be created for each KubeVirt infrastructure component (like virt-api or
-     * virt-controller). Defaults to 2. WARNING: this is an advanced feature that prevents auto-scaling for core kubevirt
-     * components. Please use with caution!
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("replicas")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("replicas indicates how many replicas should be created for each KubeVirt infrastructure component (like virt-api or virt-controller). Defaults to 2. WARNING: this is an advanced feature that prevents auto-scaling for core kubevirt components. Please use with caution!")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private Long replicas;
+  /**
+   * replicas indicates how many replicas should be created for each KubeVirt infrastructure component (like virt-api or
+   * virt-controller). Defaults to 2. WARNING: this is an advanced feature that prevents auto-scaling for core kubevirt
+   * components. Please use with caution!
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("replicas")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("replicas indicates how many replicas should be created for each KubeVirt infrastructure component (like virt-api or virt-controller). Defaults to 2. WARNING: this is an advanced feature that prevents auto-scaling for core kubevirt components. Please use with caution!")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private Long replicas;
 
-    public Long getReplicas() {
-        return replicas;
-    }
+  public Long getReplicas() {
+    return replicas;
+  }
 
-    public void setReplicas(Long replicas) {
-        this.replicas = replicas;
-    }
+  public void setReplicas(Long replicas) {
+    this.replicas = replicas;
+  }
 }

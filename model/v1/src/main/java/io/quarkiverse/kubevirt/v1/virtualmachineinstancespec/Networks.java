@@ -6,82 +6,82 @@ package io.quarkiverse.kubevirt.v1.virtualmachineinstancespec;
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Networks implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * Represents the multus cni network.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("multus")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Represents the multus cni network.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Multus multus;
+  /**
+   * Represents the multus cni network.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("multus")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Represents the multus cni network.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Multus multus;
 
-    public io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Multus getMultus() {
-        return multus;
-    }
+  public io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Multus getMultus() {
+    return multus;
+  }
 
-    public void setMultus(io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Multus multus) {
-        this.multus = multus;
-    }
+  public void setMultus(io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Multus multus) {
+    this.multus = multus;
+  }
 
-    /**
-     * Network name. Must be a DNS_LABEL and unique within the vm. More info:
-     * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @io.fabric8.generator.annotation.Required()
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Network name. Must be a DNS_LABEL and unique within the vm. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String name;
+  /**
+   * Network name. Must be a DNS_LABEL and unique within the vm. More info:
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("name")
+  @io.fabric8.generator.annotation.Required()
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Network name. Must be a DNS_LABEL and unique within the vm. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String name;
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    /**
-     * Represents the stock pod network interface.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("pod")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Represents the stock pod network interface.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Pod pod;
+  /**
+   * Represents the stock pod network interface.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("pod")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Represents the stock pod network interface.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Pod pod;
 
-    public io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Pod getPod() {
-        return pod;
-    }
+  public io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Pod getPod() {
+    return pod;
+  }
 
-    public void setPod(io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Pod pod) {
-        this.pod = pod;
-    }
+  public void setPod(io.quarkiverse.kubevirt.v1.virtualmachineinstancespec.networks.Pod pod) {
+    this.pod = pod;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonIgnore()
-    private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
+  @com.fasterxml.jackson.annotation.JsonIgnore()
+  private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
 
-    @com.fasterxml.jackson.annotation.JsonAnyGetter()
-    public java.util.Map<String, Object> getAdditionalProperties() {
-        return additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnyGetter()
+  public java.util.Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
-        this.additionalProperties = additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
-        this.additionalProperties.put(key, value);
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
+    this.additionalProperties.put(key, value);
+  }
 }

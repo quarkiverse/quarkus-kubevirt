@@ -6,67 +6,67 @@ package io.quarkiverse.kubevirt.pool.v1alpha1;
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class VirtualMachinePoolStatus implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    @com.fasterxml.jackson.annotation.JsonProperty("conditions")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private java.util.List<io.quarkiverse.kubevirt.pool.v1alpha1.virtualmachinepoolstatus.Conditions> conditions;
+  @com.fasterxml.jackson.annotation.JsonProperty("conditions")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private java.util.List<io.quarkiverse.kubevirt.pool.v1alpha1.virtualmachinepoolstatus.Conditions> conditions;
 
-    public java.util.List<io.quarkiverse.kubevirt.pool.v1alpha1.virtualmachinepoolstatus.Conditions> getConditions() {
-        return conditions;
-    }
+  public java.util.List<io.quarkiverse.kubevirt.pool.v1alpha1.virtualmachinepoolstatus.Conditions> getConditions() {
+    return conditions;
+  }
 
-    public void setConditions(
-            java.util.List<io.quarkiverse.kubevirt.pool.v1alpha1.virtualmachinepoolstatus.Conditions> conditions) {
-        this.conditions = conditions;
-    }
+  public void setConditions(
+      java.util.List<io.quarkiverse.kubevirt.pool.v1alpha1.virtualmachinepoolstatus.Conditions> conditions) {
+    this.conditions = conditions;
+  }
 
-    /**
-     * Canonical form of the label selector for HPA which consumes it through the scale subresource.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("labelSelector")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Canonical form of the label selector for HPA which consumes it through the scale subresource.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String labelSelector;
+  /**
+   * Canonical form of the label selector for HPA which consumes it through the scale subresource.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("labelSelector")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Canonical form of the label selector for HPA which consumes it through the scale subresource.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String labelSelector;
 
-    public String getLabelSelector() {
-        return labelSelector;
-    }
+  public String getLabelSelector() {
+    return labelSelector;
+  }
 
-    public void setLabelSelector(String labelSelector) {
-        this.labelSelector = labelSelector;
-    }
+  public void setLabelSelector(String labelSelector) {
+    this.labelSelector = labelSelector;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("readyReplicas")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private Integer readyReplicas;
+  @com.fasterxml.jackson.annotation.JsonProperty("readyReplicas")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private Integer readyReplicas;
 
-    public Integer getReadyReplicas() {
-        return readyReplicas;
-    }
+  public Integer getReadyReplicas() {
+    return readyReplicas;
+  }
 
-    public void setReadyReplicas(Integer readyReplicas) {
-        this.readyReplicas = readyReplicas;
-    }
+  public void setReadyReplicas(Integer readyReplicas) {
+    this.readyReplicas = readyReplicas;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("replicas")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private Integer replicas;
+  @com.fasterxml.jackson.annotation.JsonProperty("replicas")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private Integer replicas;
 
-    public Integer getReplicas() {
-        return replicas;
-    }
+  public Integer getReplicas() {
+    return replicas;
+  }
 
-    public void setReplicas(Integer replicas) {
-        this.replicas = replicas;
-    }
+  public void setReplicas(Integer replicas) {
+    this.replicas = replicas;
+  }
 }

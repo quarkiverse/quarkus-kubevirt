@@ -6,60 +6,60 @@ package io.quarkiverse.kubevirt.v1.kubevirtspec;
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class CustomizeComponents implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * Configure the value used for deployment and daemonset resources
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("flags")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Configure the value used for deployment and daemonset resources")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Flags flags;
+  /**
+   * Configure the value used for deployment and daemonset resources
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("flags")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Configure the value used for deployment and daemonset resources")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Flags flags;
 
-    public io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Flags getFlags() {
-        return flags;
-    }
+  public io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Flags getFlags() {
+    return flags;
+  }
 
-    public void setFlags(io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Flags flags) {
-        this.flags = flags;
-    }
+  public void setFlags(io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Flags flags) {
+    this.flags = flags;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("patches")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private java.util.List<io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Patches> patches;
+  @com.fasterxml.jackson.annotation.JsonProperty("patches")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private java.util.List<io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Patches> patches;
 
-    public java.util.List<io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Patches> getPatches() {
-        return patches;
-    }
+  public java.util.List<io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Patches> getPatches() {
+    return patches;
+  }
 
-    public void setPatches(java.util.List<io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Patches> patches) {
-        this.patches = patches;
-    }
+  public void setPatches(java.util.List<io.quarkiverse.kubevirt.v1.kubevirtspec.customizecomponents.Patches> patches) {
+    this.patches = patches;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonIgnore()
-    private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
+  @com.fasterxml.jackson.annotation.JsonIgnore()
+  private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
 
-    @com.fasterxml.jackson.annotation.JsonAnyGetter()
-    public java.util.Map<String, Object> getAdditionalProperties() {
-        return additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnyGetter()
+  public java.util.Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
-        this.additionalProperties = additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
-        this.additionalProperties.put(key, value);
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
+    this.additionalProperties.put(key, value);
+  }
 }

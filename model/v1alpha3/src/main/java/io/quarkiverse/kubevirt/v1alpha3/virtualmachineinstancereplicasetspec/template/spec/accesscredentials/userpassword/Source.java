@@ -6,31 +6,31 @@ package io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancereplicasetspec.te
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Source implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * Secret means that the access credential is pulled from a kubernetes secret
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("secret")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Secret means that the access credential is pulled from a kubernetes secret")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancereplicasetspec.template.spec.accesscredentials.userpassword.source.Secret secret;
+  /**
+   * Secret means that the access credential is pulled from a kubernetes secret
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("secret")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Secret means that the access credential is pulled from a kubernetes secret")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancereplicasetspec.template.spec.accesscredentials.userpassword.source.Secret secret;
 
-    public io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancereplicasetspec.template.spec.accesscredentials.userpassword.source.Secret getSecret() {
-        return secret;
-    }
+  public io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancereplicasetspec.template.spec.accesscredentials.userpassword.source.Secret getSecret() {
+    return secret;
+  }
 
-    public void setSecret(
-            io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancereplicasetspec.template.spec.accesscredentials.userpassword.source.Secret secret) {
-        this.secret = secret;
-    }
+  public void setSecret(
+      io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancereplicasetspec.template.spec.accesscredentials.userpassword.source.Secret secret) {
+    this.secret = secret;
+  }
 }

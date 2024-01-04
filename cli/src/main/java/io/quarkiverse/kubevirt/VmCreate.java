@@ -9,17 +9,17 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Spec;
 
 @Command(name = "create", subcommands = { VmCreatePodman.class,
-        VmCreateFromFile.class }, sortOptions = false, mixinStandardHelpOptions = false, header = "Create virtual machines")
+    VmCreateFromFile.class }, sortOptions = false, mixinStandardHelpOptions = false, header = "Create virtual machines")
 public class VmCreate implements Callable<Integer> {
 
-    @Spec
-    protected CommandSpec spec;
+  @Spec
+  protected CommandSpec spec;
 
-    @Option(names = { "-h", "--help" }, usageHelp = true, description = "Display this help message.")
-    public boolean help;
+  @Option(names = { "-h", "--help" }, usageHelp = true, description = "Display this help message.")
+  public boolean help;
 
-    @Override
-    public Integer call() {
-        return CommandLine.ExitCode.OK;
-    }
+  @Override
+  public Integer call() {
+    return CommandLine.ExitCode.OK;
+  }
 }

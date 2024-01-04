@@ -15,47 +15,47 @@ import io.quarkiverse.kubevirt.v1.V1Client;
 import io.quarkiverse.kubevirt.v1.V1DSL;
 
 public class DefaultKubevirtClient extends ExtensionRootClientAdapter<DefaultKubevirtClient>
-        implements NamespacedKubevirtClient, SupportTestingClient {
+    implements NamespacedKubevirtClient, SupportTestingClient {
 
-    public DefaultKubevirtClient() {
-        super();
-    }
+  public DefaultKubevirtClient() {
+    super();
+  }
 
-    public DefaultKubevirtClient(Config configuration) {
-        super(configuration);
-    }
+  public DefaultKubevirtClient(Config configuration) {
+    super(configuration);
+  }
 
-    public DefaultKubevirtClient(Client client) {
-        super(client);
-    }
+  public DefaultKubevirtClient(Client client) {
+    super(client);
+  }
 
-    @Override
-    protected DefaultKubevirtClient newInstance(Client client) {
-        return new DefaultKubevirtClient(client);
-    }
+  @Override
+  protected DefaultKubevirtClient newInstance(Client client) {
+    return new DefaultKubevirtClient(client);
+  }
 
-    @Override
-    public FunctionCallable<NamespacedKubevirtClient> withRequestConfig(RequestConfig requestConfig) {
-        return new WithRequestCallable<>(this, requestConfig);
-    }
+  @Override
+  public FunctionCallable<NamespacedKubevirtClient> withRequestConfig(RequestConfig requestConfig) {
+    return new WithRequestCallable<>(this, requestConfig);
+  }
 
-    @Override
-    public V1DSL v1() {
-        return adapt(V1Client.class);
-    }
+  @Override
+  public V1DSL v1() {
+    return adapt(V1Client.class);
+  }
 
-    @Override
-    public CdiV1beta1DSL cdiV1beta1() {
-        return adapt(CdiV1beta1Client.class);
-    }
+  @Override
+  public CdiV1beta1DSL cdiV1beta1() {
+    return adapt(CdiV1beta1Client.class);
+  }
 
-    @Override
-    public PoolV1alpha1DSL poolV1alpha1() {
-        return adapt(PoolV1alpha1Client.class);
-    }
+  @Override
+  public PoolV1alpha1DSL poolV1alpha1() {
+    return adapt(PoolV1alpha1Client.class);
+  }
 
-    @Override
-    public boolean isSupported() {
-        return hasApiGroup("kubevirt.io", false);
-    }
+  @Override
+  public boolean isSupported() {
+    return hasApiGroup("kubevirt.io", false);
+  }
 }

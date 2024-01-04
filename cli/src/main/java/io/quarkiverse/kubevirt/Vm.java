@@ -11,25 +11,25 @@ import picocli.CommandLine.ParseResult;
 import picocli.CommandLine.Spec;
 
 @Command(name = "vm", sortOptions = false, mixinStandardHelpOptions = false, header = "Vm", subcommands = {
-        VmCreate.class,
-        VmDelete.class,
-        VmList.class,
-        VmUsePodman.class }, headerHeading = "%n", commandListHeading = "%nCommands:%n", synopsisHeading = "%nUsage: ", optionListHeading = "%nOptions:%n")
+    VmCreate.class,
+    VmDelete.class,
+    VmList.class,
+    VmUsePodman.class }, headerHeading = "%n", commandListHeading = "%nCommands:%n", synopsisHeading = "%nUsage: ", optionListHeading = "%nOptions:%n")
 public class Vm implements Callable<Integer> {
 
-    @Mixin(name = "output")
-    protected OutputOptionMixin output;
+  @Mixin(name = "output")
+  protected OutputOptionMixin output;
 
-    @Mixin
-    protected HelpOption helpOption;
+  @Mixin
+  protected HelpOption helpOption;
 
-    @Spec
-    protected CommandLine.Model.CommandSpec spec;
+  @Spec
+  protected CommandLine.Model.CommandSpec spec;
 
-    @Override
-    public Integer call() throws Exception {
-        ParseResult result = spec.commandLine().getParseResult();
-        CommandLine listCommand = spec.subcommands().get("list");
-        return listCommand.execute(result.originalArgs().stream().filter(x -> !"vm".equals(x)).toArray(String[]::new));
-    }
+  @Override
+  public Integer call() throws Exception {
+    ParseResult result = spec.commandLine().getParseResult();
+    CommandLine listCommand = spec.subcommands().get("list");
+    return listCommand.execute(result.originalArgs().stream().filter(x -> !"vm".equals(x)).toArray(String[]::new));
+  }
 }

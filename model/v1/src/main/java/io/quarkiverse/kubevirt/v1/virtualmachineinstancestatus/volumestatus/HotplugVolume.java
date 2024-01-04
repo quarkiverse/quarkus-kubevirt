@@ -6,64 +6,64 @@ package io.quarkiverse.kubevirt.v1.virtualmachineinstancestatus.volumestatus;
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class HotplugVolume implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * AttachPodName is the name of the pod used to attach the volume to the node.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("attachPodName")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("AttachPodName is the name of the pod used to attach the volume to the node.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String attachPodName;
+  /**
+   * AttachPodName is the name of the pod used to attach the volume to the node.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("attachPodName")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("AttachPodName is the name of the pod used to attach the volume to the node.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String attachPodName;
 
-    public String getAttachPodName() {
-        return attachPodName;
-    }
+  public String getAttachPodName() {
+    return attachPodName;
+  }
 
-    public void setAttachPodName(String attachPodName) {
-        this.attachPodName = attachPodName;
-    }
+  public void setAttachPodName(String attachPodName) {
+    this.attachPodName = attachPodName;
+  }
 
-    /**
-     * AttachPodUID is the UID of the pod used to attach the volume to the node.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("attachPodUID")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("AttachPodUID is the UID of the pod used to attach the volume to the node.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String attachPodUID;
+  /**
+   * AttachPodUID is the UID of the pod used to attach the volume to the node.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("attachPodUID")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("AttachPodUID is the UID of the pod used to attach the volume to the node.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String attachPodUID;
 
-    public String getAttachPodUID() {
-        return attachPodUID;
-    }
+  public String getAttachPodUID() {
+    return attachPodUID;
+  }
 
-    public void setAttachPodUID(String attachPodUID) {
-        this.attachPodUID = attachPodUID;
-    }
+  public void setAttachPodUID(String attachPodUID) {
+    this.attachPodUID = attachPodUID;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonIgnore()
-    private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
+  @com.fasterxml.jackson.annotation.JsonIgnore()
+  private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
 
-    @com.fasterxml.jackson.annotation.JsonAnyGetter()
-    public java.util.Map<String, Object> getAdditionalProperties() {
-        return additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnyGetter()
+  public java.util.Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
-        this.additionalProperties = additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
-        this.additionalProperties.put(key, value);
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
+    this.additionalProperties.put(key, value);
+  }
 }

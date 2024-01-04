@@ -6,46 +6,46 @@ package io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus;
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Links implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * VirtualMachineExportLink contains a list of volumes available for export, as well as the URLs to obtain these volumes
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("external")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("VirtualMachineExportLink contains a list of volumes available for export, as well as the URLs to obtain these volumes")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.External external;
+  /**
+   * VirtualMachineExportLink contains a list of volumes available for export, as well as the URLs to obtain these volumes
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("external")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("VirtualMachineExportLink contains a list of volumes available for export, as well as the URLs to obtain these volumes")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.External external;
 
-    public io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.External getExternal() {
-        return external;
-    }
+  public io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.External getExternal() {
+    return external;
+  }
 
-    public void setExternal(io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.External external) {
-        this.external = external;
-    }
+  public void setExternal(io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.External external) {
+    this.external = external;
+  }
 
-    /**
-     * VirtualMachineExportLink contains a list of volumes available for export, as well as the URLs to obtain these volumes
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("internal")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("VirtualMachineExportLink contains a list of volumes available for export, as well as the URLs to obtain these volumes")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.Internal internal;
+  /**
+   * VirtualMachineExportLink contains a list of volumes available for export, as well as the URLs to obtain these volumes
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("internal")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("VirtualMachineExportLink contains a list of volumes available for export, as well as the URLs to obtain these volumes")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.Internal internal;
 
-    public io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.Internal getInternal() {
-        return internal;
-    }
+  public io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.Internal getInternal() {
+    return internal;
+  }
 
-    public void setInternal(io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.Internal internal) {
-        this.internal = internal;
-    }
+  public void setInternal(io.quarkiverse.kubevirt.export.v1alpha1.virtualmachineexportstatus.links.Internal internal) {
+    this.internal = internal;
+  }
 }

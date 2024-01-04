@@ -23,10 +23,10 @@ import jakarta.ws.rs.Path;
 @Path("/kubevirt-client")
 @ApplicationScoped
 public class KubevirtClientResource {
-    // add some rest methods here
+  // add some rest methods here
 
-    @GET
-    public String hello() {
-        return "Hello kubevirt-client";
-    }
+  @GET
+  public String hello() {
+    return "Hello kubevirt-client";
+  }
 }

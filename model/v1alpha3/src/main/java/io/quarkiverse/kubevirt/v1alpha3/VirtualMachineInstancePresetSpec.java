@@ -6,47 +6,47 @@ package io.quarkiverse.kubevirt.v1alpha3;
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class VirtualMachineInstancePresetSpec implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * Domain is the same object type as contained in VirtualMachineInstanceSpec
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Domain is the same object type as contained in VirtualMachineInstanceSpec")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Domain domain;
+  /**
+   * Domain is the same object type as contained in VirtualMachineInstanceSpec
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("domain")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Domain is the same object type as contained in VirtualMachineInstanceSpec")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Domain domain;
 
-    public io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Domain getDomain() {
-        return domain;
-    }
+  public io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Domain getDomain() {
+    return domain;
+  }
 
-    public void setDomain(io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Domain domain) {
-        this.domain = domain;
-    }
+  public void setDomain(io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Domain domain) {
+    this.domain = domain;
+  }
 
-    /**
-     * Selector is a label query over a set of VMIs. Required.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("selector")
-    @io.fabric8.generator.annotation.Required()
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Selector is a label query over a set of VMIs. Required.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Selector selector;
+  /**
+   * Selector is a label query over a set of VMIs. Required.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("selector")
+  @io.fabric8.generator.annotation.Required()
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Selector is a label query over a set of VMIs. Required.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Selector selector;
 
-    public io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Selector getSelector() {
-        return selector;
-    }
+  public io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Selector getSelector() {
+    return selector;
+  }
 
-    public void setSelector(io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Selector selector) {
-        this.selector = selector;
-    }
+  public void setSelector(io.quarkiverse.kubevirt.v1alpha3.virtualmachineinstancepresetspec.Selector selector) {
+    this.selector = selector;
+  }
 }

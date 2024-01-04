@@ -6,48 +6,48 @@ package io.quarkiverse.kubevirt.cdi.v1beta1.datasourcespec.source;
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Pvc implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * The name of the source PVC
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @io.fabric8.generator.annotation.Required()
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("The name of the source PVC")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String name;
+  /**
+   * The name of the source PVC
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("name")
+  @io.fabric8.generator.annotation.Required()
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("The name of the source PVC")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String name;
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    /**
-     * The namespace of the source PVC
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    @io.fabric8.generator.annotation.Required()
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("The namespace of the source PVC")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String namespace;
+  /**
+   * The namespace of the source PVC
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("namespace")
+  @io.fabric8.generator.annotation.Required()
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("The namespace of the source PVC")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String namespace;
 
-    public String getNamespace() {
-        return namespace;
-    }
+  public String getNamespace() {
+    return namespace;
+  }
 
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
-    }
+  public void setNamespace(String namespace) {
+    this.namespace = namespace;
+  }
 }

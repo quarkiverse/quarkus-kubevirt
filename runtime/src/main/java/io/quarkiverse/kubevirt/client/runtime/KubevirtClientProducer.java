@@ -11,10 +11,10 @@ import io.quarkus.arc.DefaultBean;
 @Singleton
 public class KubevirtClientProducer {
 
-    @DefaultBean
-    @Singleton
-    @Produces
-    public KubevirtClient tektonClient(Config config) {
-        return new DefaultKubevirtClient(config);
-    }
+  @DefaultBean
+  @Singleton
+  @Produces
+  public KubevirtClient tektonClient(Config config) {
+    return new DefaultKubevirtClient(config);
+  }
 }

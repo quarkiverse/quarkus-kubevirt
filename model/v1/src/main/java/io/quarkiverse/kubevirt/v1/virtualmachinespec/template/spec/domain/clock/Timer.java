@@ -6,112 +6,112 @@ package io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Timer implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * HPET (High Precision Event Timer) - multiple timers with periodic interrupts.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("hpet")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("HPET (High Precision Event Timer) - multiple timers with periodic interrupts.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hpet hpet;
+  /**
+   * HPET (High Precision Event Timer) - multiple timers with periodic interrupts.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("hpet")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("HPET (High Precision Event Timer) - multiple timers with periodic interrupts.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hpet hpet;
 
-    public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hpet getHpet() {
-        return hpet;
-    }
+  public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hpet getHpet() {
+    return hpet;
+  }
 
-    public void setHpet(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hpet hpet) {
-        this.hpet = hpet;
-    }
+  public void setHpet(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hpet hpet) {
+    this.hpet = hpet;
+  }
 
-    /**
-     * Hyperv (Hypervclock) - lets guests read the host’s wall clock time (paravirtualized). For windows guests.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("hyperv")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Hyperv (Hypervclock) - lets guests read the host’s wall clock time (paravirtualized). For windows guests.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hyperv hyperv;
+  /**
+   * Hyperv (Hypervclock) - lets guests read the host’s wall clock time (paravirtualized). For windows guests.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("hyperv")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Hyperv (Hypervclock) - lets guests read the host’s wall clock time (paravirtualized). For windows guests.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hyperv hyperv;
 
-    public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hyperv getHyperv() {
-        return hyperv;
-    }
+  public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hyperv getHyperv() {
+    return hyperv;
+  }
 
-    public void setHyperv(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hyperv hyperv) {
-        this.hyperv = hyperv;
-    }
+  public void setHyperv(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Hyperv hyperv) {
+    this.hyperv = hyperv;
+  }
 
-    /**
-     * KVM (KVM clock) - lets guests read the host’s wall clock time (paravirtualized). For linux guests.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("kvm")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("KVM \t(KVM clock) - lets guests read the host’s wall clock time (paravirtualized). For linux guests.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Kvm kvm;
+  /**
+   * KVM (KVM clock) - lets guests read the host’s wall clock time (paravirtualized). For linux guests.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("kvm")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("KVM \t(KVM clock) - lets guests read the host’s wall clock time (paravirtualized). For linux guests.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Kvm kvm;
 
-    public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Kvm getKvm() {
-        return kvm;
-    }
+  public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Kvm getKvm() {
+    return kvm;
+  }
 
-    public void setKvm(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Kvm kvm) {
-        this.kvm = kvm;
-    }
+  public void setKvm(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Kvm kvm) {
+    this.kvm = kvm;
+  }
 
-    /**
-     * PIT (Programmable Interval Timer) - a timer with periodic interrupts.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("pit")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("PIT (Programmable Interval Timer) - a timer with periodic interrupts.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Pit pit;
+  /**
+   * PIT (Programmable Interval Timer) - a timer with periodic interrupts.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("pit")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("PIT (Programmable Interval Timer) - a timer with periodic interrupts.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Pit pit;
 
-    public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Pit getPit() {
-        return pit;
-    }
+  public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Pit getPit() {
+    return pit;
+  }
 
-    public void setPit(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Pit pit) {
-        this.pit = pit;
-    }
+  public void setPit(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Pit pit) {
+    this.pit = pit;
+  }
 
-    /**
-     * RTC (Real Time Clock) - a continuously running timer with periodic interrupts.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("rtc")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("RTC (Real Time Clock) - a continuously running timer with periodic interrupts.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Rtc rtc;
+  /**
+   * RTC (Real Time Clock) - a continuously running timer with periodic interrupts.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("rtc")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("RTC (Real Time Clock) - a continuously running timer with periodic interrupts.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Rtc rtc;
 
-    public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Rtc getRtc() {
-        return rtc;
-    }
+  public io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Rtc getRtc() {
+    return rtc;
+  }
 
-    public void setRtc(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Rtc rtc) {
-        this.rtc = rtc;
-    }
+  public void setRtc(io.quarkiverse.kubevirt.v1.virtualmachinespec.template.spec.domain.clock.timer.Rtc rtc) {
+    this.rtc = rtc;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonIgnore()
-    private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
+  @com.fasterxml.jackson.annotation.JsonIgnore()
+  private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
 
-    @com.fasterxml.jackson.annotation.JsonAnyGetter()
-    public java.util.Map<String, Object> getAdditionalProperties() {
-        return additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnyGetter()
+  public java.util.Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
-        this.additionalProperties = additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
-        this.additionalProperties.put(key, value);
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
+    this.additionalProperties.put(key, value);
+  }
 }

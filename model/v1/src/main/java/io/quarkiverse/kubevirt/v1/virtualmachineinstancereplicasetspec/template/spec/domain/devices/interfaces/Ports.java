@@ -6,82 +6,82 @@ package io.quarkiverse.kubevirt.v1.virtualmachineinstancereplicasetspec.template
 @lombok.ToString()
 @lombok.EqualsAndHashCode()
 @io.sundr.builder.annotations.Buildable(editableEnabled = false, validationEnabled = false, generateBuilderPackage = false, builderPackage = "io.fabric8.kubernetes.api.builder", refs = {
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
-        @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ObjectReference.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.LabelSelector.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Container.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.EnvVar.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.ContainerPort.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.Volume.class),
+    @io.sundr.builder.annotations.BuildableReference(io.fabric8.kubernetes.api.model.VolumeMount.class)
 })
 public class Ports implements io.fabric8.kubernetes.api.model.KubernetesResource {
 
-    /**
-     * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name.
-     * Name for the port that can be referred to by services.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String name;
+  /**
+   * If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name.
+   * Name for the port that can be referred to by services.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("name")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String name;
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    /**
-     * Number of port to expose for the virtual machine. This must be a valid port number, 0 < x < 65536.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("port")
-    @io.fabric8.generator.annotation.Required()
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Number of port to expose for the virtual machine. This must be a valid port number, 0 < x < 65536.")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private Integer port;
+  /**
+   * Number of port to expose for the virtual machine. This must be a valid port number, 0 < x < 65536.
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("port")
+  @io.fabric8.generator.annotation.Required()
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Number of port to expose for the virtual machine. This must be a valid port number, 0 < x < 65536.")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private Integer port;
 
-    public Integer getPort() {
-        return port;
-    }
+  public Integer getPort() {
+    return port;
+  }
 
-    public void setPort(Integer port) {
-        this.port = port;
-    }
+  public void setPort(Integer port) {
+    this.port = port;
+  }
 
-    /**
-     * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    @com.fasterxml.jackson.annotation.JsonPropertyDescription("Protocol for port. Must be UDP or TCP. Defaults to \"TCP\".")
-    @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
-    private String protocol;
+  /**
+   * Protocol for port. Must be UDP or TCP. Defaults to "TCP".
+   */
+  @com.fasterxml.jackson.annotation.JsonProperty("protocol")
+  @com.fasterxml.jackson.annotation.JsonPropertyDescription("Protocol for port. Must be UDP or TCP. Defaults to \"TCP\".")
+  @com.fasterxml.jackson.annotation.JsonSetter(nulls = com.fasterxml.jackson.annotation.Nulls.SKIP)
+  private String protocol;
 
-    public String getProtocol() {
-        return protocol;
-    }
+  public String getProtocol() {
+    return protocol;
+  }
 
-    public void setProtocol(String protocol) {
-        this.protocol = protocol;
-    }
+  public void setProtocol(String protocol) {
+    this.protocol = protocol;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonIgnore()
-    private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
+  @com.fasterxml.jackson.annotation.JsonIgnore()
+  private java.util.Map<String, Object> additionalProperties = new java.util.HashMap<>();
 
-    @com.fasterxml.jackson.annotation.JsonAnyGetter()
-    public java.util.Map<String, Object> getAdditionalProperties() {
-        return additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnyGetter()
+  public java.util.Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
-        this.additionalProperties = additionalProperties;
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperties(java.util.Map<String, Object> additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
 
-    @com.fasterxml.jackson.annotation.JsonAnySetter()
-    public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
-        this.additionalProperties.put(key, value);
-    }
+  @com.fasterxml.jackson.annotation.JsonAnySetter()
+  public void setAdditionalProperty(java.lang.String key, java.lang.Object value) {
+    this.additionalProperties.put(key, value);
+  }
 }

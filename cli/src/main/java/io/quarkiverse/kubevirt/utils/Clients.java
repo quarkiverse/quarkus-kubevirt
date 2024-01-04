@@ -6,18 +6,18 @@ import io.quarkiverse.kubevirt.client.KubevirtClient;
 
 public final class Clients {
 
-    public static KubernetesClient KUBERNETES_CLIENT = new KubernetesClientBuilder().build();
-    public static KubevirtClient KUBEVIRT_CLIENT = KUBERNETES_CLIENT.adapt(KubevirtClient.class);
+  public static KubernetesClient KUBERNETES_CLIENT = new KubernetesClientBuilder().build();
+  public static KubevirtClient KUBEVIRT_CLIENT = KUBERNETES_CLIENT.adapt(KubevirtClient.class);
 
-    private Clients() {
-        //Utility
-    }
+  private Clients() {
+    //Utility
+  }
 
-    public static KubernetesClient kubernetes() {
-        return KUBERNETES_CLIENT;
-    }
+  public static KubernetesClient kubernetes() {
+    return KUBERNETES_CLIENT;
+  }
 
-    public static KubevirtClient kubevirt() {
-        return KUBEVIRT_CLIENT;
-    }
+  public static KubevirtClient kubevirt() {
+    return KUBEVIRT_CLIENT;
+  }
 }
