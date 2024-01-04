@@ -10,8 +10,11 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
 @TopCommand
-@Command(name = "kubevirt", sortOptions = false, mixinStandardHelpOptions = false, header = "Kubevirt CLI", subcommands = {
-        Vm.class })
+@Command(name = "kubevirt", sortOptions = false, mixinStandardHelpOptions = false, header = "OpenShift VM CLI", subcommands = {
+        VmCreate.class,
+        VmDelete.class,
+        VmList.class,
+        VmUsePodman.class })
 public class KubevirtCommand implements Callable<Integer> {
 
     static {
@@ -29,7 +32,7 @@ public class KubevirtCommand implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        CommandLine schemaCommand = spec.subcommands().get("vm");
+        CommandLine schemaCommand = spec.subcommands().get("list");
         return schemaCommand.execute();
     }
 
