@@ -45,7 +45,7 @@
 
     <quarkus.version>3.5.3</quarkus.version>
     <sundrio.version>0.103.1</sundrio.version>
-    <lombok.version>1.18.26</lombok.version>
+    <lombok.version>1.18.30</lombok.version>
     <kubernetes-client.version>6.9.2</kubernetes-client.version>
 
     <!-- Formatting Plugins -->
