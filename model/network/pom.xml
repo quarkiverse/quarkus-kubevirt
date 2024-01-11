@@ -100,7 +100,7 @@
           <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>java-generator-maven-plugin</artifactId>
-            <version>6.10-SNAPSHOT</version>
+            <version>6.10.0</version>
             <executions>
               <execution>
                 <phase>generate-sources</phase>
