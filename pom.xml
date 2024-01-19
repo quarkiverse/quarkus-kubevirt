@@ -164,7 +164,7 @@
       <id>format</id>
       <activation>
         <property>
-          <name>format.skip</name>
+          <name>no-format</name>
           <value>!true</value>
         </property>
       </activation>
@@ -183,7 +183,7 @@
                 <configuration>
                   <configFile>${maven.multiModuleProjectDirectory}/.code-format.xml</configFile>
                   <lineEnding>LF</lineEnding>
-                  <skip>${format.skip}</skip>
+                  <skip>${no-format}</skip>
                   <encoding>UTF-8</encoding>
                 </configuration>
               </execution>
@@ -202,7 +202,7 @@
                 <configuration>
                   <groups>java.,javax.,org.,com.</groups>
                   <staticGroups>*</staticGroups>
-                  <skip>${format.skip}</skip>
+                  <skip>${no-format}</skip>
                   <removeUnused>true</removeUnused>
                 </configuration>
               </execution>
