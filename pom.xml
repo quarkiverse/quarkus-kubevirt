@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.quarkiverse</groupId>
@@ -29,7 +28,6 @@
     <module>deployment</module>
     <module>runtime</module>
     <module>cli</module>
-    <module>docs</module>
   </modules>
 
   <scm>
@@ -161,6 +159,18 @@
 
   <profiles>
     <profile>
+      <id>docs</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>!true</value>
+        </property>
+      </activation>
+      <modules>
+        <module>docs</module>
+      </modules>
+    </profile>
+    <profile>
       <id>format</id>
       <activation>
         <property>
@@ -174,7 +184,6 @@
             <groupId>net.revelc.code.formatter</groupId>
             <artifactId>formatter-maven-plugin</artifactId>
             <version>${formatter-maven-plugin.version}</version>
-            <inherited>true</inherited>
             <executions>
               <execution>
                 <goals>
@@ -188,12 +197,12 @@
                 </configuration>
               </execution>
             </executions>
+            <inherited>true</inherited>
           </plugin>
           <plugin>
             <groupId>net.revelc.code</groupId>
             <artifactId>impsort-maven-plugin</artifactId>
             <version>${impsort-maven-plugin.version}</version>
-            <inherited>true</inherited>
             <executions>
               <execution>
                 <goals>
@@ -207,7 +216,8 @@
                 </configuration>
               </execution>
             </executions>
-           </plugin>
+            <inherited>true</inherited>
+          </plugin>
         </plugins>
       </build>
     </profile>
