@@ -11,7 +11,7 @@ import io.quarkus.deployment.builditem.IndexDependencyBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 import io.quarkus.kubernetes.client.runtime.KubernetesClientProducer;
 
-class kubevritClientProcessor {
+class KubevirtClientProcessor {
 
   private static final String FEATURE = "quarkiverse-kubevrit-client";
 
@@ -35,10 +35,11 @@ class kubevritClientProcessor {
     IndexView index = combinedIndexBuildItem.getIndex();
 
     String[] classes = index.getKnownClasses().stream()
-        .filter(classInfo -> classInfo.name().toString().startsWith("io.quarkiverse.kubevirt.pipeline"))
-        .map(Object::toString).toArray(String[]::new);
+            .map(classInfo -> classInfo.name().toString())
+            .filter(name -> name.startsWith("io.quarkiverse.kubevirt.pipeline"))
+            .toArray(String[]::new);
 
-    reflectiveClass.produce(new ReflectiveClassBuildItem(true, true, classes));
+    reflectiveClass.produce(ReflectiveClassBuildItem.builder(classes).constructors().methods().fields().build());
   }
 
   @BuildStep
